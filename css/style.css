@@ -1,0 +1,421 @@
+/* 
+  Name: Raed Ahmed Alsafry
+  ID: 2236088
+  Section: CS1
+  Date: 2025-10-04
+  File: style.css
+  Description: Main styling for Raed Retro Store website
+*/
+/* Selects all elements */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Body style: background, text, and font setup */
+body {
+    background-color: #036760;
+    color: #B0B0B0;
+    font-family: "Press Start 2P", "Consolas", monospace;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Centered link styles for Contact me */
+a{
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Blockquote appearance*/
+blockquote{
+    color: deeppink;
+    background-color: rgb(18, 3, 3);
+    text-align: center;
+}
+
+/* Citation styling */
+cite{
+    font-style:oblique;
+    color: cyan;
+    background: white;
+}
+
+/* Span styling */
+span{
+    font-style: italic;
+    text-decoration: underline;
+    color: crimson;
+    background-color: black;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #3e2c72;
+    padding: 20px 40px;
+    border-bottom: 3px solid white;
+}
+
+/* Flex layout for nav content */
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo text link */
+.logo a {
+    font-size: 20px;
+    font-weight: 600px;
+    color: gold;
+}
+
+/* Nav list style */
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+/* Nav link style */
+li a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+/* Hover effect on nav links */
+li a:hover {
+    color: #FFCB05;
+}
+
+/* Buttons */
+button {
+    background-color: #585858;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #FFCB05;
+}
+
+/* Contact textarea */
+/* Styling for complaint textarea */
+#Complane {
+    width: 75%;
+    height: 50%;
+    font-size: 14px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px solid;
+    background-color: white;
+    color: rgb(12, 12, 12);
+    font-family: "Press Start 2P", "Consolas", monospace;
+}
+
+/* Legend for the form style */
+legend{
+    padding: 5px;
+    margin: 10px ;
+    color: white;
+}
+
+/* Lable for the form style */
+label{
+    padding-left: 15px;
+    color: #FFCB05;
+}
+
+/* Submit button style */
+.SubmitB {
+    background-color: #585858;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+
+.SubmitB a {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.SubmitB:hover {
+    background-color: #FFCB05;
+}
+
+/* Headings and Paragraphs */
+/* Main page heading style */
+h1 {
+    background-color: aquamarine;
+    color: azure;
+    font-family: "Press Start 2P", "consolas", sans-serif;
+    text-align: center;
+    border-style: inset;
+    border-width: 5px;
+    border-color: gold;
+    border-radius: 15px;
+    padding: 5px;
+    background: linear-gradient(to right, skyblue, lightgreen);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 20px;
+}
+
+/* Paragraph style for general sections */
+p {
+    background-color: #39206a;
+    color: #FFCB05;
+    text-align: center;
+    margin: 20px;
+    border-width: 5px;
+    border-radius: 20px;
+    border-style: groove;
+    border-color: darkmagenta;
+    padding: 25px;
+}
+
+/* Feature Box (Home Page) */
+#box1 {
+    border: 5px deeppink solid;
+    width: 500px;
+    height: auto;
+    margin-left: 30px;
+    font-size: 22px;
+    background: linear-gradient(to top, rgb(252, 252, 252), rgb(180, 0, 0));
+}
+
+/* Paragraph inside box1 */
+#box1 p {
+    text-align: center;
+    background-color: crimson;
+    color: rgb(249, 248, 245);
+    padding: 10px;
+    border-style: solid;
+    border-color: silver;
+    border-radius: 35px;
+    border-width: 8px;
+}
+
+/* Section subheadings */
+h2 {
+    padding: 20px;
+    text-align: start;
+    color: #FFCB05;
+    background: linear-gradient(to right, rgb(213, 10, 101), rgb(6, 108, 224));
+}
+
+/* Producets Section (Items Page) */
+.producets-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    margin: 50px;
+    background: linear-gradient(to left, rgb(20, 0, 9), rgb(244, 244, 245));
+}
+
+.producets-section img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    border: 4px solid #FFCB05;
+    margin-top: 25px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+/* Footer */
+footer{
+    background-color:#670404;
+    padding-top: 50px;
+    height: auto;
+}
+.container{
+    max-width:1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+/* Footer section container */
+.footer{
+    background-color: #670404;
+    padding: 40px 0 20px 0;
+    color: #FFCB05;
+    font-family: "Press Start 2P", "consolas", sans-serif;
+}
+.footer-content{
+    width:45%;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #dcdcdc;
+}
+.footer-content p{
+  margin: 5px 0;
+  color: #FFCB05;
+  
+}
+.footer-content ul{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Footer quick links list */
+.list li{
+    list-style-type:none ;
+    margin:  0px;
+}
+.list li a{
+    text-decoration: none;
+    color: white;
+}
+.list li a:hover{
+   color: #FFCB05;
+}
+
+/* Bottom bar copyright */
+.bottom-bar {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.bottom-bar p {
+    color: #FFCB05;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Box2 (About Page, etc.) */
+.box2 {
+  background: linear-gradient(135deg, #1e0f3f, #6825a3);
+  color: #ffffff;
+  font-family: 'Press Start 2P', Consolas, monospace;
+  padding: 25px;
+  border: 3px solid #ffcc00;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+.box2 h2 {
+  font-size: 20px;
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.box2 ul {
+  list-style-type: square;
+  padding-left: 30px;
+  line-height: 1.8;
+}
+
+.box2 li {
+  margin-bottom: 10px;
+}
+
+/* Featured Games (Items Page) */
+.featured-game {
+  background-color: #3e2c72;
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  padding: 20px;
+  border: 3px solid gold;
+  border-radius: 10px;
+  margin: 30px;
+  overflow: hidden;
+}
+
+/* Floating images next to text */
+.float-left {
+  float: left;
+  width: 180px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.float-right {
+  float: right;
+  width: 180px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+/* Clearing layout after floats */
+.clear-both{
+  display: block;
+  clear: both;
+  width: 180px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+/* Text in featured game box */
+.featured-game p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  border-style: none;
+  border-radius: 0px;
+  background: none;
+  padding: 0px;
+}
+
+/* Buy button under games */
+.buy-button {
+  background-color: gold;
+  color: #3e2c72;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.buy-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Console Name Header */
+.console-name{
+  background-color: rgb(0, 24, 244);
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  padding: 20px;
+  border: 3px ridge rgb(249, 251, 251);
+  border-radius: 10px;
+  margin: 30px;
+  overflow: hidden;
+}
+.console-name h1{
+  color:silver;
+  margin-bottom: 10px;
+  border-style: none;
+  border-radius: 0px;
+  background: none;
+  padding: 0px;
+}

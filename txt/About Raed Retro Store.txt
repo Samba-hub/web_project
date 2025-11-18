@@ -1,0 +1,26 @@
+Raed Retro Store Website
+
+Project Name: Raed Retro Store
+Developer: Raed Ahmed Alsafry
+Student ID: 2236088
+Section: CS1
+Date: 2025-10-01
+
+Description:
+This website is a retro-themed online store that showcases classic video games. It includes pages such as Home, Services, Contact, Items, Form, and About. It is styled using a retro aesthetic and custom CSS.
+
+Contents:
+- HTML files for each section of the site
+- External CSS file (style.css)
+- Images for visual design
+- This folder (txt/) contains notes
+
+Notes:
+- All HTML pages are properly linked and use a consistent layout.
+- Fonts are imported from Google Fonts (Press Start 2P).
+- Website is designed for desktop and supports basic responsiveness.
+
+Contact:
+Email: raeda8372@gmail.com
+
+Thank you for your time.
