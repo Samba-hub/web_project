@@ -1,9 +1,7 @@
 <!-- 
-  Name: Raed Ahmed Alsafry
-  ID: 2236088
-  Section: CS1
-  Date: 2025-10-01
-  Page: Contact Page
+  Name: Ultimate Life Form
+  ID: 2002-02-22
+  Date: ????-??-??
 -->
 <!-- HTML5 doctype declaration -->
 <!DOCTYPE html>
@@ -11,7 +9,7 @@
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="Raed">
+    <meta name="author" content="Ultimate Life Form">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel ="stylesheet" href="../css/style.css">
@@ -21,14 +19,14 @@
     <!-- Navigation bar -->
      <nav class="navbar">
         <div class="navdiv">
-            <div class="logo"><a href="../index.html">RaedRetroStore</a></div>
+            <div class="logo"><a href="../index.php">Ultimate Life Form RetroStore</a></div>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="Services.html">Services</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Items.html">Items</a></li>
-                <li><a href="form.html">Form</a></li>
-                <li><a href="About.html">About</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="Services.php">Services</a></li>
+                <li><a href="Contact.php">Contact</a></li>
+                <li><a href="Items.php">Items</a></li>
+                <li><a href="form.php">Form</a></li>
+                <li><a href="About.php">About</a></li>
             </ul>
         </div>
     </nav>
@@ -40,13 +38,13 @@
 
     <div class="box2">
 
-    <span>At Raed Retro Store, your experience is our top priority. We are committed to providing the best possible service.</span>
+    <span>At Ultimate Life Form Retro Store, your experience is our top priority. We are committed to providing the best possible service.</span>
     <span> If you encounter any issue or believe we've fallen short, please let us know immediately.</span>
     <span>You can reach us using the provided contact information or by leaving your feedback in the text box below. We value your input and appreciate your business.</span>
     </div>
 
     <!-- Email hyperlink -->
-    <p><a href="mailto:raeda8372@gmail.com" target="_self" title="email me">
+    <p><a href="mailto:Ultimate Life Forma8372@gmail.com" target="_self" title="email me">
         Email
     </a></p>
     <!--Contact Info-->
@@ -65,8 +63,8 @@
         <div class="container">
             <div class="footer-content">
                 <address>
-                <li><a href="Contact.html">Contact me</a></li>
-                <p><a href="mailto:raeda8372@gmail.com">raeda8372@gmail.com</a></p>
+                <li><a href="Contact.php">Contact me</a></li>
+                <p><a href="mailto:Ultimate Life Forma8372@gmail.com">Ultimate Life Forma8372@gmail.com</a></p>
                 <p>Phone:+996 54 1234 567</p>
                 <p>Address: King Abdulaziz University, Jeddah, Saudi Arabia</p>
                 </address>
@@ -74,18 +72,18 @@
             <div class="footer-content">
                 <h3>Quick Links</h3>
                 <ul class="list">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="Services.html">Services</a></li>
-                    <li><a href="Items.html">Items</a></li>
-                    <li><a href="form.html">Form</a></li>
-                    <li><a href="About.html">About</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="Services.php">Services</a></li>
+                    <li><a href="Items.php">Items</a></li>
+                    <li><a href="form.php">Form</a></li>
+                    <li><a href="About.php">About</a></li>
                 </ul>
             </div>
 
         </div>
         <!-- Copyright -->
         <div class="bottom-bar">
-            <p>&copy; 2025 RaedRetroStore.All rights reserved.</p>
+            <p>&copy; 2025 Ultimate Life FormRetroStore.All rights reserved.</p>
         </div>
     </footer>
 </body>
