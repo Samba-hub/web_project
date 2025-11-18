@@ -17,19 +17,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navdiv">
-            <div class="logo"><a href="../index.php">Ultimate Life Form RetroStore</a></div>
-            <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="Services.php">Services</a></li>
-                <li><a href="Contact.php">Contact</a></li>
-                <li><a href="Items.php">Items</a></li>
-                <li><a href="form.php">Form</a></li>
-                <li><a href="About.php">About</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include '../includes/navbar.php'; ?>
     <!-- Page Heading -->
     <h1>Our Services</h1>
     <!-- Introduction Paragraph -->

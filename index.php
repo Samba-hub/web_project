@@ -20,19 +20,8 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navdiv">
-            <div class="logo"><a href="index.php">Ultimate Life Form RetroStore</a></div>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="pages/Services.php">Services</a></li>
-                <li><a href="pages/Contact.php">Contact</a></li>
-                <li><a href="pages/Items.php">Items</a></li>
-                <li><a href="pages/form.php">Form</a></li>
-                <li><a href="pages/About.php">About</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include 'includes/navbar.php'; ?>
+    
     <!-- Page Heading -->
     <h1>Ultimate Life Form Retro Store</h1>
 
