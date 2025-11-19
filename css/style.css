@@ -57,41 +57,41 @@ span{
     background-color: #3e2c72;
     padding: 20px 40px;
     border-bottom: 3px solid white;
-}
-
-/* Flex layout for nav content */
-.navdiv {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-between;
+    flex-wrap:wrap;
 }
 
+
+/* Flex layout for nav content */
+
+
 /* Logo text link */
+
+
+
+/* Nav link style */
+.navbar a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 25px;
+    flex-grow: 1;
+    flex-shrink:1;
+    flex-basis: 20%;
+}
+
+/* Hover effect on nav links */
+.navbar a:hover {
+    color: #FFCB05;
+}
+
 .logo a {
     font-size: 20px;
     font-weight: 600px;
     color: gold;
 }
-
-/* Nav list style */
-li {
-    list-style: none;
-    display: inline-block;
-}
-
-/* Nav link style */
-li a {
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 25px;
-}
-
-/* Hover effect on nav links */
-li a:hover {
-    color: #FFCB05;
-}
-
 /* Buttons */
 button {
     background-color: #585858;
