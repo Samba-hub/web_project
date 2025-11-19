@@ -1,10 +1,8 @@
 /* 
-  Name: Raed Ahmed Alsafry
-  ID: 2236088
-  Section: CS1
-  Date: 2025-10-04
-  File: style.css
-  Description: Main styling for Raed Retro Store website
+  Name: Ultimate Life Form
+  ID: 2002-02-22
+  Date: ????-??-??
+
 */
 /* Selects all elements */
 * {
@@ -411,6 +409,7 @@ footer{
   margin: 30px;
   overflow: hidden;
 }
+
 .console-name h1{
   color:silver;
   margin-bottom: 10px;
@@ -419,3 +418,20 @@ footer{
   background: none;
   padding: 0px;
 }
+
+label.block_label{
+    display: block;
+    position: relative;
+}
+
+.form_div{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+/* label.block_label{
+    
+} */
