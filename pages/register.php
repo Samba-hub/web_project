@@ -10,21 +10,24 @@
     </head>
 
     <body>
-
+        <!-- Navigation bar -->
+        <?php include '../includes/navbar.php'; ?>
         <div class="form_div">
         <form name="registerform" id="registerform">
             
-            <fieldset>
+            <div class="form_container">
+                <h3>Log In</h3>
             <label class="block_label">
-                username
+                username<span class="required">*</span>
                 <input type="text" name="username" id="username">
             </label>
 
             <label class="block_label">
-                password
+                password<span class="required">*</span>
                 <input type="password" name="userpassword" id="userpassword">
             </label>
-            </fieldset>
+            <p>Don't have an account? <a style="display: inline; color:blueviolet;">Sign In</a></p>
+            </div>
 
         </form>
         </div>

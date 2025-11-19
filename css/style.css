@@ -419,18 +419,56 @@ footer{
   padding: 0px;
 }
 
+#registerform fieldset {
+    border: none;
+    padding: 0;
+}
+
+#registerform p{
+  margin-top: 35px;
+  background-color: transparent;
+  color: grey;
+  text-align: center;
+  font-size: 10px;
+  border: none;
+  padding: 0px;
+}
+
+.form_container{
+    border: 2px solid #39206a;
+    border-radius: 10px;
+}
+
+.form_container h3{
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+
+
+}
+
 label.block_label{
     display: block;
     position: relative;
+    margin-bottom: 10px;
+}
+
+.block_label span.required{
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+    
 }
 
 .form_div{
-    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
+}
 
+#registerform{
+    width: 400px;
 }
 /* label.block_label{
     
