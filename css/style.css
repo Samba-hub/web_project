@@ -419,3 +419,52 @@ footer{
   background: none;
   padding: 0px;
 }
+
+.form_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#registerform{
+    width: 400px;
+}
+
+.form_container{
+    border: 2px solid;
+    border-color: cadetblue;
+    border-radius: 10px;
+}
+
+.form_container h3{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.block_label{
+    display: block;
+    margin-bottom: 25px;
+}
+
+.block_label span{
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.form_container p{
+  background-color: transparent;
+  color: grey;
+  text-align: center;
+  margin: opx;
+  border: none;
+  padding: 0px;
+  font-size: 10px;
+}
+
+input[type="submit"]{
+    display: block;
+    margin: 0 auto;
+}
+

@@ -8,6 +8,7 @@
             <a href="/final_project/pages/Items.php">Items</a>
             <a href="/final_project/pages/form.php">Form</a>
             <a href="/final_project/pages/About.php">About</a>
+            <a href="/final_project/pages/register.php">Register</a>
         
     
 </nav>
