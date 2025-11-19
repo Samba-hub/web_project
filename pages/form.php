@@ -25,23 +25,23 @@
   <h1>Please fill this form</h1>
 
   <!-- Form for selling or buying games -->
-  <form method="POST">
+  <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
 
     <!-- Personal Info Section -->
-    <fieldset name="SB-Form" id="SB-Form">
+    <fieldset>
       <legend>Personal Info</legend>
       
       <label for="fname">First name:</label>
-      <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" required>
+      <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" >
 
       <label for="fname">Last name: </label>
-      <input type="text" id="lname" name="lname" placeholder="Alsafry" required>
+      <input type="text" id="lname" name="lname" placeholder="Alsafry" >
 
       <label for="email">Email: </label>
-      <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+      <input type="text" id="email" name="email" placeholder="example@gmail.com" >
 
       <label for="phone">Phone#:</label>
-      <input type="tel" id="phone" name="phone" placeholder="(123)-456-7890" required>
+      <input type="tel" id="phone" name="phone" placeholder="(123)-456-7890" >
 
     </fieldset>
 
@@ -51,20 +51,21 @@
 
 
       <label for="gname">Game name:</label>
-      <input type="text" id="gname" name="gname" placeholder="your-game-name" required>
+      <input type="text" id="gname" name="gname" placeholder="your-game-name" >
 
       <label for="status">status:</label>
 
       <label for="want-to-sell">want-to-sell</label>
-      <input type="radio" id="want-to-sell" name="status" required>
+      <input type="radio" id="want-to-sell" name="status" >
 
       <label for="want-to-buy">want-to-buy</label>
-      <input type="radio" id="want-to-buy" name="status" required>
+      <input type="radio" id="want-to-buy" name="status" >
+
       <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity" min="0" max="100" value="1" required>
+      <input type="text" id="quantity" name="quantity" >
 
       <label for="Price">Price:</label>
-      <input type="number" id="Price" name="Price" min="5" max="1000" placeholder="30$" required>
+      <input type="text" id="Price" name="Price" placeholder="30$" >
       </div>
 
       <!-- Form Buttons -->
