@@ -468,3 +468,32 @@ input[type="submit"]{
     margin: 0 auto;
 }
 
+
+
+.photo_gallery{
+
+display:flex;
+justify-content:flex-start;
+flex-wrap: wrap;
+align-content: space-between;
+
+
+
+
+
+}
+
+
+
+
+img.photo_gallery{
+
+flex-grow:1;
+flex-shrink: 1;
+flex-basis: 400px;
+min-width: 0px;
+
+
+height:auto
+}
+
