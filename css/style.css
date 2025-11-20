@@ -517,3 +517,34 @@ p.video_p{
 }
 
 
+
+
+.photo_gallery{
+
+display:flex;
+justify-content:space-around;
+flex-wrap: wrap;
+align-content: space-around;
+
+row-gap:20px;
+
+
+
+
+}
+
+
+
+
+.photo_gallery img{
+
+
+flex-basis: 250px;
+max-width:  400px;
+min-width: 150px;
+height: auto;
+
+
+
+}
+

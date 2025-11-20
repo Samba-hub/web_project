@@ -10,6 +10,7 @@
             <a href="/final_project/pages/About.php">About</a>
             <a href="/final_project/pages/register.php">Register</a>
             <a href="/final_project/pages/video_reviews.php">Video Reviews</a>
+            <a href ="/final_project/pages/photo_gallry.php">photo_gallry</a>
         
     
 </nav>
