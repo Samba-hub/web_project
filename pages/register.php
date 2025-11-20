@@ -11,9 +11,10 @@
 
     <body>
         <!-- Navigation bar -->
-         <div>
+         
         <?php include '../includes/navbar.php'; ?>
-        </div>
+        <h1>Register Page</h1>
+        
         <div class="form_div">
         <form name="registerform" id="registerform">
             
