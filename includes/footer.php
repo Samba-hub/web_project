@@ -21,6 +21,7 @@
                     <li><a href="/final_project/pages/About.php">About</a></li>
                     <li><a href="/final_project/pages/register.php">Register</a></li>
                     <li><a href="/final_project/pages/video_reviews.php">Video Reviews</a></li>
+                    <li><a href="/final_project/pages/resume.php">Resume</a></li>
                 </ul>
             </div>
 

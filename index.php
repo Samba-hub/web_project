@@ -61,7 +61,7 @@
         </div>
         <!-- Image -->
         <a href="pages/Items.php" target="_self" title="Click here to go to the Products/Itmes page">
-            <img src="images/StoreLogo.png" width="400px">
+            <img src="images/GOAT.jpeg" width="400px">
         </a>
     </div>
 
