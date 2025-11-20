@@ -11,9 +11,9 @@
 
     <body>
         <!-- Navigation bar -->
-         <div>
+         
         <?php include '../includes/navbar.php'; ?>
-        </div>
+        
         <div class="form_div">
         <form name="registerform" id="registerform">
             

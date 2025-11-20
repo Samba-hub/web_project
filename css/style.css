@@ -468,3 +468,39 @@ input[type="submit"]{
     margin: 0 auto;
 }
 
+.v_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39206a;
+}
+
+.center_div{
+    display: flex;
+    margin-top: 10px;
+    width: 800px;
+    background-color: #FFCB05;
+    /* border: 2px solid #670404; */
+    /* border-radius: 10px; */
+}
+
+iframe.video_embed{
+    
+    float: right;
+}
+
+.v_container_p{
+    width: 30%;
+}
+
+p.video_p{
+  font-size: 10px;
+  background-color: transparent;
+  color: grey;
+  text-align: left;
+  margin: 0px;
+  border: none;
+  padding: 0px;
+}
+
+
