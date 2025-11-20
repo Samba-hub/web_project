@@ -13,6 +13,7 @@
         <!-- Navigation bar -->
          
         <?php include '../includes/navbar.php'; ?>
+        <h1>Register Page</h1>
         
         <div class="form_div">
         <form name="registerform" id="registerform">
