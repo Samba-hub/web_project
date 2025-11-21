@@ -435,3 +435,148 @@ footer{
   background: none;
   padding: 0px;
 }
+
+.form_div{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#registerform{
+    width: 400px;
+}
+
+.form_container{
+    border: 2px solid;
+    border-color: cadetblue;
+    border-radius: 10px;
+}
+
+.form_container h3{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.block_label{
+    display: block;
+    margin-bottom: 25px;
+}
+
+.block_label span{
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.form_container p{
+  background-color: transparent;
+  color: grey;
+  text-align: center;
+  margin: opx;
+  border: none;
+  padding: 0px;
+  font-size: 10px;
+}
+
+input[type="submit"]{
+    display: block;
+    margin: 0 auto;
+}
+
+.v_body{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #39206a;
+}
+
+.center_div{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    /* background-color: #FFCB05; */
+    gap: 30px;
+  
+}
+
+.video_div{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: #1F51FF;
+    border: 5px solid #670404;
+    border-radius: 10px;
+}
+
+iframe.video_embed{
+    float: right;
+    width: 70%;
+    height: 500px;
+}
+
+.v_container_p{
+    width: 30%;
+    margin: 2px;
+}
+
+p.video_p{
+  font-size: 10px;
+  background-color: transparent;
+  color: #39FF14;
+  text-align: left;
+  margin: 0px;
+  border: none;
+  padding: 0px;
+}
+
+
+
+
+.photo_gallery{
+
+display:flex;
+justify-content:space-around;
+flex-wrap: wrap;
+align-content: space-around;
+
+row-gap:20px;
+
+
+
+
+}
+
+
+
+
+.photo_gallery img{
+
+
+flex-basis: 250px;
+max-width:  400px;
+min-width: 150px;
+height: auto;
+
+
+
+}
+
+.pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+    .pdf,
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    h1,
+    h3 {
+        text-align: center;
+    }
+
