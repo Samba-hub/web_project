@@ -62,10 +62,10 @@
       <input type="radio" id="want-to-buy" name="status" >
 
       <label for="quantity">Quantity:</label>
-      <input type="text" id="quantity" name="quantity" >
+      <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
 
       <label for="Price">Price:</label>
-      <input type="text" id="Price" name="Price" placeholder="30$" >
+      <input type="number" id="Price" name="Price" min="5" max="1000"  placeholder="5$" >
       </div>
 
       <!-- Form Buttons -->

@@ -130,10 +130,26 @@ legend{
 
 /* Lable for the form style */
 label{
-    padding-left: 15px;
+    padding-left: 2%;
+    padding-top: 2%;
+    margin:30px 15px 25px 100px;
     color: #FFCB05;
+    display: flex;
+    justify-content: space-between;
 }
-
+#fname,#lname,#email,#phone,#gname,#quantity,#Price{
+    width: 20em;
+   margin-left: 25%;
+   margin-bottom: 1%;
+}
+#want-to-buy,#want-to-sell{
+    width: 20em;
+   justify-content: center;
+}
+fieldset{
+    margin-top: 5px;
+    padding: 5px;
+}
 /* Submit button style */
 .SubmitB {
     background-color: #585858;
