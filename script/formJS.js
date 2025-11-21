@@ -16,20 +16,28 @@ function validateForm(){
     if(!validatePhone())
         return false;
 
-   //Price validation
-    if(!validateGameName())
-        return false;
-
     //Status valiadtion
     if(!validateStatus())
+        return false;
+
+   //GameName validation
+    if(!validateGameName())
         return false;
 
     //Quantity validation
     if(!validateQuantity())
         return false;
 
+    //Condition validation
+    if(!validateFeedback())
+        return false;
+
     //Price validation
     if(!validatePrice())
+        return false;
+
+    //Term validation
+    if(!validateTerm())
         return false;
 
     
@@ -71,6 +79,24 @@ function validateFirstName(){
 
     return true;
 }
+
+function validateFeedback(){
+
+if(document.getElementById("Feedback").value == ""){
+        alert("Feedback must be filled out");
+        return false;
+    }
+
+    var f = document.getElementById("Feedback").value;
+
+    if (f.length < 0|| f.length > 100){
+        alert("Enter a Condition that is 3 charecter and more");
+        return false;
+    }
+
+    return true;
+}
+
 
 function validateGameName(){
 
@@ -114,8 +140,20 @@ function validatePhone(){
 }
 
 function validateQuantity(){
+   
+   if(document.getElementById("quantity").value == ""){
+        alert("Quantity must be filled out");
+        return false;
+    }
+
     var q = document.getElementById("quantity").value;
-    if (isNaN(q) || q < 1 || q > 100){
+   
+    if (isNaN(q)) {
+        alert("Quantity must contain only numbers");
+        return false;
+    }
+
+    if (q < 1 || q > 100){
         alert("Qunatity must be in range of 1 to a 100");
         return false;
     }
@@ -123,9 +161,21 @@ function validateQuantity(){
 }
 
 function validatePrice(){
+
+if(document.getElementById("Price").value == ""){
+        alert("Price must be filled out");
+        return false;
+    }
+
     var p = document.getElementById("Price").value;
-    if (isNaN(p) || p < 5 || p > 1000){
-        alert("Price must be between 5 to 1000");
+
+    if (isNaN(p)) {
+        alert("Price must contain only numbers");
+        return false;
+    }
+
+    if (p < 5 || p > 1000){
+        alert("Price must be between 5$ to 1000$");
         return false;
     }
     return true;
@@ -157,6 +207,16 @@ function validateStatus(){
 
     if (!sell && !buy){
         alert("Please select a status: Sell or Buy");
+        return false;
+    }
+    return true;
+}
+
+function validateTerm(){
+    var agree = document.getElementById("agree-to-term").checked;
+
+    if (!agree){
+        alert("check the Term of Services box");
         return false;
     }
     return true;

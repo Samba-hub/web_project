@@ -131,40 +131,57 @@ legend{
 /* Lable for the form style */
 label{
     padding-left: 2%;
-    padding-top: 2%;
-    margin:30px 15px 25px 100px;
+    padding-top: 10px;
+    margin: 10px 15px 10px 100px;
     color: #FFCB05;
+    
+}
+#fname,#lname,#email,#phone,#gname,#quantity,#Price,#Condition{
+   display: block;
+    width: 20em;
+   margin-left: 10%;
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+   
+}
+
+.status-option {
     display: flex;
-    justify-content: space-between;
 }
-#fname,#lname,#email,#phone,#gname,#quantity,#Price{
-    width: 20em;
-   margin-left: 25%;
-   margin-bottom: 1%;
+
+.status-option label {
+    color: #FFCB05;
 }
-#want-to-buy,#want-to-sell{
-    width: 20em;
-   justify-content: center;
-}
+
+
+
 fieldset{
     margin-top: 5px;
     padding: 5px;
 }
+.buttoncontainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;  
+    gap: 50%;                  
+    margin-top: 20px;           
+}
 /* Submit button style */
-.SubmitB {
+.SubmitB,.ResetB {
     background-color: #585858;
     border-radius: 10px;
     padding: 10px;
+    margin-left: 100px;
     width: 90px;
 }
 
-.SubmitB a {
+.SubmitB a,.ResetB a {
     color: white;
     font-weight: bold;
     font-size: 15px;
 }
 
-.SubmitB:hover {
+.SubmitB:hover ,.ResetB:hover{
     background-color: #FFCB05;
 }
 
