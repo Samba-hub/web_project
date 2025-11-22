@@ -16,7 +16,7 @@
         <h1>Register Page</h1>
         
         <div class="form_div">
-        <form name="registerform" id="registerform">
+        <form method="POST" name="registerform" id="registerform" onsubmit="return validateAccount()">
             
             <div class="form_container">
                 <h3>Log In</h3>
@@ -36,6 +36,8 @@
 
         </form>
         </div>
+         <!--javascript-->
+  <script src="/final_project/script/formJS.js"></script>
         <?php include '../includes/footer.php'; ?>
     </body>
 

@@ -608,3 +608,18 @@ height: auto;
         text-align: center;
     }
 
+.Table, .Table th, .Table td, .Table tr{
+    margin-top: 15px;
+    margin-left: 25px;
+    background-color: #585858;
+    color:white;
+    
+}
+.Table th, .Table td{
+    background-color: darkblue;
+    border: 5px solid black;
+}
+.Table caption{
+    display: block;
+    color: #FFCB05;
+}
