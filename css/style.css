@@ -273,10 +273,10 @@ footer{
     height: auto;
 }
 .container{
-    max-width:1200px;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
+    display:grid;
+    grid-template-areas: "contact quicklink" "bottom-bar bottom-bar";
+    grid-template-columns: 50% 50%;
+    
 }
 
 /* Footer section container */
@@ -287,10 +287,17 @@ footer{
     font-family: "Press Start 2P", "consolas", sans-serif;
 }
 .footer-content{
-    width:45%;
+   grid-area: contact;
     text-align: center;
 }
-.footer-content h3{
+
+
+.footer-content-quick{
+grid-area:quicklink;
+
+}
+
+.footer-content-quick h3{
     font-size: 20px;
     margin-bottom: 15px;
     color: #dcdcdc;
@@ -298,13 +305,15 @@ footer{
 .footer-content p{
   margin: 5px 0;
   color: #FFCB05;
+  padding:25px
   
 }
-.footer-content ul{
+
+.footer-content-quick ul{
     padding: 0px;
     margin: 0px;
-    display: flex;
-    justify-content: center;
+    display: inline;
+ 
 
 }
 
@@ -321,12 +330,14 @@ footer{
    color: #FFCB05;
 }
 
+
 /* Bottom bar copyright */
 .bottom-bar {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
     border-radius: 10px;
+    grid-area:bottom-bar;
 }
 .bottom-bar p {
     color: #FFCB05;
