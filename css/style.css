@@ -593,7 +593,37 @@ transition: flex-basis 1.5s;
 
 
 }
+.popup-imag{
+position:fixed;
+top:0; left: 0;
+background: rgb(0,0,0,0.9);
+height:100%;
+width:100%;
+z-index: 100;
+display:none;
+}
 
+.popup-imag span{
+position:absolute;
+top:0px;
+right:10px;
+z-index:100;
+
+}
+
+.popup-imag img{
+position:absolute;
+top: 10%;
+left:30%;
+width:500px
+
+}
+
+@media (max-width: 768px){
+   .popup-imag img{
+    width:95%;
+   }
+}
 
 
 .pdf {

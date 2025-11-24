@@ -17,6 +17,8 @@
 
 <?php  include '../includes/navbar.php';    ?>
 
+<div class = "page">
+
 
 <div class = "photo_gallery" id = "contain">
 
@@ -39,8 +41,14 @@
 
 </div>
 
+<div class = "popup-imag">
+<span>&times;</span>
+<img src= "../images/Call_of_Duty_Black_Ops_II_box_artwork.png" alt = ""/>
 
 
+</div>
+
+</div>
 
 <?php include '../includes/footer.php';?>
 

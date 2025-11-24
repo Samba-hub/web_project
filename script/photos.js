@@ -24,7 +24,26 @@ for(var i = 0; i < x.length; i++){
          
        
     });
+
+    y.addEventListener("click",function (){
+ let popup_window  = document.querySelector(".popup-imag");
+ let popup_window_img = document.querySelector(".popup-imag img");
+
+ popup_window_img.src = this.getAttribute("src");
+ popup_window.style.display = "block";
+
+    });
 }
+
+let exit = document.querySelector(".popup-imag span");
+exit.addEventListener("click",function (){
+
+
+let popup_window  = document.querySelector(".popup-imag");
+popup_window.style.display = "none";
+
+
+})
 
 }
 
