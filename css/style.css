@@ -89,7 +89,7 @@ span{
 
 .logo a {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight:600;
     color: gold;
 }
 /* Buttons */
@@ -502,7 +502,7 @@ grid-area:quicklink;
   background-color: transparent;
   color: grey;
   text-align: center;
-  margin: opx;
+  margin: 0px;
   border: none;
   padding: 0px;
   font-size: 10px;
