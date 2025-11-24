@@ -18,7 +18,7 @@
 <?php  include '../includes/navbar.php';    ?>
 
 
-<div class = "photo_gallery">
+<div class = "photo_gallery" id = "contain">
 
 
 <img src = "../images/Call_of_Duty_Black_Ops_II_box_artwork.png" alt = "blackops"/>
@@ -47,7 +47,8 @@
 
 
 
-
+<script type = "text/javascript" src ="../script/photos.js">
+ </script>
 
 </body>
 

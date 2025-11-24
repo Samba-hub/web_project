@@ -584,13 +584,17 @@ row-gap:20px;
 
 
 flex-basis: 250px;
-max-width:  400px;
+max-width:  500px;
 min-width: 150px;
-height: auto;
+height: 400px;
+transition: flex-basis 1.5s;
+
 
 
 
 }
+
+
 
 .pdf {
         width: 100%;
