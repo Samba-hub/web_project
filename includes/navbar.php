@@ -2,7 +2,7 @@
    
         <div class="logo"><a href="/final_project/index.php">Ultimate Life Form RetroStore</a></div>
         
-            <a href="/final_project/index.php">Home</a>
+            <a href="/final_project/index.html">Home</a>
             <a href="/final_project/pages/Services.php">Services</a>
             <a href="/final_project/pages/Contact.php">Contact</a>
             <a href="/final_project/pages/Items.php">Items</a>

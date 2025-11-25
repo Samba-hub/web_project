@@ -13,7 +13,7 @@
             <div class="footer-content-quick">
                 <h3>Quick Links</h3>
                 <ul class="list">
-                    <li><a href="/final_project/index.php">Home</a></li>
+                    <li><a href="/final_project/index.html">Home</a></li>
                     <li><a href="/final_project/pages/Services.php">Services</a></li>
                     <li><a href="/final_project/pages/Items.php">Items</a></li>
                     <li><a href="/final_project/pages/form.php">Form</a></li>
