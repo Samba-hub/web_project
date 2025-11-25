@@ -1,5 +1,4 @@
 function validateForm(){
-    
     //FirstName validation
     if(!validateFirstName())
         return false;
@@ -41,7 +40,57 @@ function validateForm(){
         return false;
 
     
+
+    
 }
+
+function validateAccount(){
+    //Username validation
+    if(!validateUserName())
+        return false;
+
+    //Userpassword validation
+    if(!validateuserpassword())
+        return false;
+
+}
+
+function validateuserpassword(){
+
+    
+     if(document.getElementById("userpassword").value == ""){
+        alert("Password must be filled out");
+        return false;
+    }
+
+    var userpassword = document.getElementById("userpassword").value;
+
+    if (userpassword.length < 8|| userpassword.length > 13){
+        alert("Enter a password that is at least 8 charecter and less than 13");
+        return false;
+    }
+
+    return true;
+}
+
+function validateUserName(){
+
+    
+     if(document.getElementById("username").value == ""){
+        alert("username must be filled out");
+        return false;
+    }
+
+    var username = document.getElementById("username").value;
+
+    if (username.length < 3|| username.length > 100){
+        alert("Enter a username that is 3 charecter and more");
+        return false;
+    }
+
+    return true;
+}
+
 
 function validateLastName(){
 
@@ -90,7 +139,7 @@ if(document.getElementById("Feedback").value == ""){
     var f = document.getElementById("Feedback").value;
 
     if (f.length < 0|| f.length > 100){
-        alert("Enter a Condition that is 3 charecter and more");
+        alert("Enter a feedback that is 3 charecter and more");
         return false;
     }
 

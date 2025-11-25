@@ -100,7 +100,7 @@
         </label>
 
       <!-- Form Buttons -->
-      <br>
+    
       <div class="buttoncontainer">
         <input type="reset" class="ResetB">
         <input type="submit" class="SubmitB">
