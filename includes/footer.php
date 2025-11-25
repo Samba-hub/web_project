@@ -13,16 +13,16 @@
             <div class="footer-content-quick">
                 <h3>Quick Links</h3>
                 <ul class="list">
-                    <li><a href="/final_project/index.php">Home</a></li>
-                    <li><a href="/final_project/pages/Services.php">Services</a></li>
-                    <li><a href="/final_project/pages/Items.php">Items</a></li>
-                    <li><a href="/final_project/pages/form.php">Form</a></li>
-                    <li><a href="/final_project/pages/Contact.php">Contact</a></li>
-                    <li><a href="/final_project/pages/About.php">About</a></li>
-                    <li><a href="/final_project/pages/register.php">Register</a></li>
-                    <li><a href="/final_project/pages/video_reviews.php">Video Reviews</a></li>
-                    <li><a href="/final_project/pages/resume.php">Resume</a></li>
-                    <li><a href ="/final_project/pages/table.php">Table</a></li>
+                    <li><a href="/web_project/index.html">Home</a></li>
+                    <li><a href="/web_project/pages/Services.php">Services</a></li>
+                    <li><a href="/web_project/pages/Items.php">Items</a></li>
+                    <li><a href="/web_project/pages/form.php">Form</a></li>
+                    <li><a href="/web_project/pages/Contact.php">Contact</a></li>
+                    <li><a href="/web_project/pages/About.php">About</a></li>
+                    <li><a href="/web_project/pages/register.php">Register</a></li>
+                    <li><a href="/web_project/pages/video_reviews.php">Video Reviews</a></li>
+                    <li><a href="/web_project/pages/resume.php">Resume</a></li>
+                    <li><a href ="/web_project/pages/table.php">Table</a></li>
                 </ul>
             </div>
 
