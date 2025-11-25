@@ -22,6 +22,7 @@
                     <li><a href="/final_project/pages/register.php">Register</a></li>
                     <li><a href="/final_project/pages/video_reviews.php">Video Reviews</a></li>
                     <li><a href="/final_project/pages/resume.php">Resume</a></li>
+                    <li><a href ="/final_project/pages/table.php">Table</a></li>
                 </ul>
             </div>
 
@@ -31,6 +32,23 @@
         <div class="bottom-bar">
             <p>&copy; 2025 Ultimate Life FormRetroStore.All rights reserved.</p>
         </div>
+
+<!--CSS Validation-->
+<p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
+<p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+    </a>
+</p>
 
 </div>
     </footer>
