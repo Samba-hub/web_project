@@ -37,7 +37,7 @@
         </form>
         </div>
          <!--javascript-->
-  <script src="/final_project/script/formJS.js"></script>
+  <script src="/final_project/script/validation.js"></script>
         <?php include '../includes/footer.php'; ?>
     </body>
 
