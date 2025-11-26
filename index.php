@@ -26,7 +26,7 @@
     <h1>Ultimate Life Form Retro Store</h1>
 
     <!-- Introduction Section -->
-    <div class="Homediv">
+    <div>
 
         <p>Welcome to <cite>Ultimate Life Form Retro Store</cite>, your destination for nostalgic gaming experiences from the golden
             days of consoles.
@@ -49,8 +49,8 @@
         </blockquote>
     </div>
 
-    <!-- Featured Products Section -->
-    <div class="producets-section">
+  
+    
         <div id="box1">
             <h2>Products/Items</h2>
             <p>Browse through our hand-picked collection of classic consoles, original game cartridges, and retro
@@ -58,12 +58,12 @@
                 From legendary RPGs to unforgettable platformers, our store is packed with gaming treasures waiting to
                 be rediscovered.
             </p>
-        </div>
+        
         <!-- Image -->
         <a href="pages/Items.php" target="_self" title="Click here to go to the Products/Itmes page">
-            <img src="images/GOAT.jpeg" width="400px">
+            <img src="images/GOAT.jpeg">
         </a>
-    </div>
+   </div>
 
    <?php include './includes/footer.php' ?>
 </body>
