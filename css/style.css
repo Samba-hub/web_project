@@ -216,16 +216,7 @@ p {
     padding: 25px;
 }
 
-/* Feature Box (Home Page) */
-#box1 {
-    border: 5px deeppink solid;
-    width: 500px;
-    height: auto;
-    margin-left: 30px;
-    font-size: 22px;
-    background: linear-gradient(to top, rgb(252, 252, 252), rgb(180, 0, 0));
-}
-
+/* Home Page */
 /* Paragraph inside box1 */
 #box1 p {
     text-align: center;
@@ -236,8 +227,41 @@ p {
     border-color: silver;
     border-radius: 35px;
     border-width: 8px;
+    
+}
+/*New box1*/
+#box1 {
+  background: linear-gradient(135deg, #1e0f3f, #6825a3);
+  color: #ffffff;
+  font-family: 'Press Start 2P', Consolas, monospace;
+  padding: 25px;
+  border: 3px solid #920c7e;
+  border-radius: 15px;
+  max-width: 90%;
+  margin: 40px auto;
+  box-shadow: 0 0 20px #06db3f;
+  height: auto;
+  font-size: 12px;
 }
 
+#box1 h2 {
+  font-size: 20px;
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#box1 img{
+    width: 100%;              
+    max-width: 300px;         
+    height: auto;             
+    display: block;           
+    margin: 20px auto;        
+    border-radius: 10px;      
+    border: 4px solid #ffcc00;
+}
+
+/*End of it */
 /* Section subheadings */
 h2 {
     padding: 20px;
@@ -641,19 +665,31 @@ width:500px
     h3 {
         text-align: center;
     }
+.Table {
+    width: 100%;
+}
 
-.Table, .Table th, .Table td, .Table tr{
-    margin-top: 15px;
-    margin-left: 25px;
-    background-color: #585858;
-    color:white;
-    
-}
-.Table th, .Table td{
+.Table th, .Table td {
+    padding: 10px;
+    text-align: center;
     background-color: darkblue;
-    border: 5px solid black;
+    color: white;
+    border: 4px solid black;
 }
-.Table caption{
-    display: block;
+
+.Table caption {
     color: #FFCB05;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .Table th, .Table td {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .Table {
+        min-width: 300px;  
+    }
 }
