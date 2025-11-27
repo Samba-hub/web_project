@@ -262,10 +262,15 @@ function validateStatus(){
 }
 
 function validateTerm(){
-    var agree = document.getElementById("agree-to-term").checked;
-
-    if (!agree){
+    var agreeT = document.getElementById("agree-to-term").checked;
+    var agreeD = document.getElementById("agree-to-use-of-data").checked;
+    if (!agreeT){
         alert("check the Term of Services box");
+        return false;
+    }
+
+    if (!agreeD){
+        alert("check the Use of Data box");
         return false;
     }
     return true;

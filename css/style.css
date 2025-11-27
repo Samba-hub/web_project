@@ -134,17 +134,20 @@ label{
     padding-top: 10px;
     margin: 10px 15px 10px 100px;
     color: #FFCB05;
-    
 }
 #fname,#lname,#email,#phone,#gname,#quantity,#Price,#Condition{
    display: block;
-    width: 20em;
+   width: 20em;
    margin-left: 10%;
    margin-bottom: 10px;
    padding-bottom: 10px;
    
 }
-
+#agree-to-term,#agree-to-use-of-data{
+   margin-bottom: 2%;
+   margin-top: 1%;
+   margin-left: 15%;
+}
 .status-option {
     display: flex;
 }

@@ -3,7 +3,7 @@
             <!-- Contact Info -->
             <div class="footer-content">
                 <address>
-                <li><a href="Contact.php">Contact me</a></li>
+                <li><a href="/final_project/pages/Contact.php">Contact me</a></li>
                 <p>rma@gmail.com</p>
                 <p>Phone:+996 54 1234 567</p>
                 <p>Address: King Abdulaziz University, Jeddah, Saudi Arabia</p>
@@ -21,6 +21,7 @@
                     <li><a href="/final_project/pages/About.php">About</a></li>
                     <li><a href="/final_project/pages/register.php">Register</a></li>
                     <li><a href="/final_project/pages/video_reviews.php">Video Reviews</a></li>
+                    <li><a href ="/final_project/pages/photo_gallry.php">photo_gallry</a></li>
                     <li><a href="/final_project/pages/resume.php">Resume</a></li>
                     <li><a href ="/final_project/pages/table.php">Table</a></li>
                 </ul>
