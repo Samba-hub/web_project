@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
-    <meta name="author" content="Ultimate Life Form">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <meta charset="UTF-8" >
+    <meta name="author" content="Ultimate Life Form" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Table</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/print.css" media="print">
@@ -15,7 +16,7 @@
          
         <?php include '../includes/navbar.php'; ?>
         <h1>Table Page</h1>
-        <table border="10" class="Table">
+        <table class="Table">
     <caption>Best Selling Games</caption>
 
     <tr>

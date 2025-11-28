@@ -31,6 +31,9 @@
     <fieldset>
       <legend>Personal Info</legend>
       
+      <label for="username">User name:<span>*</span></label>
+      <input type="text" id="username" name="username" placeholder="Ultimate Life Form" >
+
       <label for="fname">First name:<span>*</span></label>
       <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" >
 

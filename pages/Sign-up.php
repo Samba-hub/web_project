@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Ultimate Life Form">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Sign-up</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
@@ -14,25 +14,39 @@
         <!-- Navigation bar -->
          
         <?php include '../includes/navbar.php'; ?>
-        <h1>Register Page</h1>
+        <h1>Sign-up Page</h1>
         
         <div class="form_div">
-        <form method="POST" name="registerform" id="registerform" onsubmit="return validateAccount()">
+        <form method="POST" name="registerform" id="registerform" onsubmit="return validateSign_Up()">
             
             <div class="form_container">
-                <h3>Log In</h3>
+                <h3>Sign up</h3>
             <label class="block_label">
                 username<span class="required">*</span>
                 <input type="text" name="username" id="username">
             </label>
 
             <label class="block_label">
+                first name<span class="required">*</span>
+                <input type="text" name="fname" id="fname">
+            </label>
+
+            <label class="block_label">
+                last name<span class="required">*</span>
+                <input type="text" name="lname" id="lname">
+            </label>
+
+            <label class="block_label">
+                Email: <span>*</span>
+            <input type="text" id="email" name="email" placeholder="example@gmail.com" >
+            </label>
+            <label class="block_label">
                 password<span class="required">*</span>
                 <input type="password" name="userpassword" id="userpassword">
             </label>
-            <input type="submit" id="submit_button" name="submit_button" value="Log In">
+            <input type="submit" id="submit_button" name="submit_button" value="Sign Up">
             
-            <p>Don't have an account? <a href="/final_project/pages/Sign-up.php">Sign In</a></p>
+            
             </div>
 
         </form>
