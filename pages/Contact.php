@@ -31,7 +31,7 @@
     </div>
 
     <!-- Email hyperlink -->
-    <p><a href="mailto:Ultimate Life Forma8372@gmail.com" target="_self" title="email me">
+    <p><a href="mailto:UltimateLifeForma8372@gmail.com" target="_self" title="email me">
         Email
     </a></p>
     <!--Contact Info-->
@@ -42,7 +42,7 @@
     <form method="post">
     <textarea id="Complane" name="Complane" placeholder="Here Please"></textarea>
     <input type ="submit" class="SubmitB">
-    </div>
+    
     </form>
 
     <!-- Footer Section with contact and quick links -->

@@ -31,6 +31,9 @@
     <fieldset>
       <legend>Personal Info</legend>
       
+      <label for="username">User name:<span>*</span></label>
+      <input type="text" id="username" name="username" placeholder="Ultimate Life Form" >
+
       <label for="fname">First name:<span>*</span></label>
       <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" >
 
@@ -52,9 +55,7 @@
         <div class="status-option">
         <label for="want-to-sell">want-to-sell</label>
         <input type="radio" id="want-to-sell" name="status" value="sell">
-        </div>
-
-        <div class="status-option">
+        
         <label for="want-to-buy">want-to-buy</label>
         <input type="radio" id="want-to-buy" name="status" value="buy">
         </div>
@@ -93,23 +94,30 @@
       </fieldset>
 
       <fieldset>
-      <legend>Term of Services:</legend>
-        <label>
-       <input type="checkbox" id="agree-to-term" name="agree-to-term" value="Agree">
-         <span>*</span> I Agree to the term of Services and I understand what I am doing.
-        </label>
+      <legend>Term of Services & Use of Data:</legend>
+         <div>
+         <label>
+         <input type="checkbox" id="agree-to-term" name="agree-to-term" value="Agree-to-term-of-service">
+         <span>*</span> I Agree to the term of Services.
+         </label>
 
+         <label>
+         <input type="checkbox" id="agree-to-use-of-data" name="agree-to-use-of-data" value="Agree-to-use-of-data">
+         <span>*</span> I Agree to the use of my data.
+         </label>
+         </div>
+        </fieldset>
       <!-- Form Buttons -->
     
       <div class="buttoncontainer">
         <input type="reset" class="ResetB">
         <input type="submit" class="SubmitB">
       </div>
-    </fieldset>
+    
   </form>
 
   <!--javascript-->
-  <script src="/final_project/script/formJS.js"></script>
+  <script src="/final_project/script/validation.js"></script>
 
   <!-- Footer with contact info and quick links -->
   <?php include '../includes/footer.php'; ?>

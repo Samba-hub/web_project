@@ -1,4 +1,8 @@
 function validateForm(){
+   //Username validation
+    if(!validateUserName())
+        return false;
+   
     //FirstName validation
     if(!validateFirstName())
         return false;
@@ -47,6 +51,29 @@ function validateForm(){
 function validateAccount(){
     //Username validation
     if(!validateUserName())
+        return false;
+
+    //Userpassword validation
+    if(!validateuserpassword())
+        return false;
+
+}
+
+function validateSign_Up(){
+    //Username validation
+    if(!validateUserName())
+        return false;
+
+    //FirstName validation
+    if(!validateFirstName())
+        return false;
+
+    //LastName validation
+    if(!validateLastName())
+        return false;
+
+    //Email validation
+    if(!validateEmail())
         return false;
 
     //Userpassword validation
@@ -262,10 +289,15 @@ function validateStatus(){
 }
 
 function validateTerm(){
-    var agree = document.getElementById("agree-to-term").checked;
-
-    if (!agree){
+    var agreeT = document.getElementById("agree-to-term").checked;
+    var agreeD = document.getElementById("agree-to-use-of-data").checked;
+    if (!agreeT){
         alert("check the Term of Services box");
+        return false;
+    }
+
+    if (!agreeD){
+        alert("check the Use of Data box");
         return false;
     }
     return true;
