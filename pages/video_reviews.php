@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="author" content="Ultimate Life Form" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      charset="UTF-8"
-    />
+   <meta charset="UTF-8" >
+    <meta name="author" content="Ultimate Life Form" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Video Reviews</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" >
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
-    />
+     >
   </head>
 
   <body>
@@ -39,7 +36,7 @@
             class="video_embed"
             src="https://www.youtube.com/embed/zCVF3gmu5sI"
             title="Sonic Heroes - Ocean Palace - Team Sonic [REAL Full HD, Widescreen]"
-            frameborder="0"
+            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -65,7 +62,7 @@
             class="video_embed"
             src="https://www.youtube.com/embed/AaSrBO9EjpY?list=PLb1wtf8AbJvQqUPEhLxIuS7nN_bozahtU"
             title="Crash Tag Team Racing - Walkthrough Part 1 (Road To CTR Nitro-Fueled)"
-            frameborder="0"
+            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -91,7 +88,7 @@
             class="video_embed"
             src="https://www.youtube.com/embed/WdA-vK3-F6Q?list=PLHPstxTlW0TbWF4IEa2AhOkBcD-2het2N"
             title="Jackie Chan Adventures 100% - Prologue: Mexico - Walkthrough"
-            frameborder="0"
+            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen

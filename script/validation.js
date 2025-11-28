@@ -1,4 +1,8 @@
 function validateForm(){
+   //Username validation
+    if(!validateUserName())
+        return false;
+   
     //FirstName validation
     if(!validateFirstName())
         return false;
@@ -47,6 +51,29 @@ function validateForm(){
 function validateAccount(){
     //Username validation
     if(!validateUserName())
+        return false;
+
+    //Userpassword validation
+    if(!validateuserpassword())
+        return false;
+
+}
+
+function validateSign_Up(){
+    //Username validation
+    if(!validateUserName())
+        return false;
+
+    //FirstName validation
+    if(!validateFirstName())
+        return false;
+
+    //LastName validation
+    if(!validateLastName())
+        return false;
+
+    //Email validation
+    if(!validateEmail())
         return false;
 
     //Userpassword validation

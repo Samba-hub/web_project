@@ -135,7 +135,7 @@ label{
     margin: 10px 15px 10px 100px;
     color: #FFCB05;
 }
-#fname,#lname,#email,#phone,#gname,#quantity,#Price,#Condition{
+#username,#fname,#lname,#email,#phone,#gname,#quantity,#Price,#Condition{
    display: block;
    width: 20em;
    margin-left: 10%;
@@ -525,6 +525,11 @@ grid-area:quicklink;
     text-decoration: none;
 }
 
+.block_label #username,.block_label #fname,.block_label #lname,.block_label #email{
+    width: 10em;
+    margin: 0px;
+}
+
 .form_container p{
   background-color: transparent;
   color: grey;
@@ -570,6 +575,7 @@ iframe.video_embed{
     float: right;
     width: 70%;
     height: 500px;
+    border: none;
 }
 
 .v_container_p{
@@ -670,6 +676,7 @@ width:500px
     }
 .Table {
     width: 100%;
+    border: 10px solid black;
 }
 
 .Table th, .Table td {
