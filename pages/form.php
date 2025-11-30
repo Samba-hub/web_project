@@ -4,6 +4,44 @@
   Date: ????-??-??
 -->
 <!-- HTML5 doctype declaration -->
+
+<?php
+require_once '../db_connect.php';
+
+$message = ""; 
+
+if(isset($_POST['submit_form'])){
+    
+    // $username = $_POST['username'];
+    // $fname    = $_POST['fname'];
+    // $lname    = $_POST['lname'];
+    // $email    = $_POST['email'];
+    // $phone    = $_POST['phone'];
+    
+
+    $status   = isset($_POST['status']) ? mysqli_real_escape_string($conn, $_POST['status']) : '';
+
+    $gname    = $_POST['gname'];
+    $quantity = $_POST['quantity'];
+    $price    = $_POST['Price'];
+    $condition= $_POST['Condition'];
+    $feedback = $_POST['Feedback'];
+
+
+    $sql = "INSERT INTO form 
+            (sell_or_buy, game_name, quantity, price, game_condition, feedback) 
+            VALUES 
+            ('$status', '$gname', '$quantity', '$price', '$condition', '$feedback')";
+
+    if (mysqli_query($conn, $sql)) {
+        $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
+    } else {
+        $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +61,7 @@
 
   <!-- Page heading -->
   <h1>Please fill this form</h1>
+  <?php echo $message; ?>
 
   <!-- Form for selling or buying games -->
   <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
@@ -37,7 +76,7 @@
       <label for="fname">First name:<span>*</span></label>
       <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" >
 
-      <label for="fname">Last name: <span>*</span></label>
+      <label for="lname">Last name: <span>*</span></label>
       <input type="text" id="lname" name="lname" placeholder="Alsafry" >
 
       <label for="email">Email: <span>*</span></label>
@@ -111,10 +150,11 @@
     
       <div class="buttoncontainer">
         <input type="reset" class="ResetB">
-        <input type="submit" class="SubmitB">
+        <input type="submit" class="SubmitB" name= "submit_form" value="Submit">
       </div>
     
   </form>
+
 
   <!--javascript-->
   <script src="/final_project/script/validation.js"></script>
