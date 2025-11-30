@@ -1,3 +1,26 @@
+<?php
+require_once '../db_connect.php';
+$message= "";
+
+if(isset($_POST['submit_btn'])){
+    $complaint= $_POST['Complane'];
+
+    $sql= "INSERT INTO complaints
+            (complaint_text)
+            VALUES
+            ('$complaint')";
+    
+    if (mysqli_query($conn, $sql)) {
+        $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
+    } else {
+        $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+    }
+
+}
+
+
+?>
+
 <!-- 
   Name: Ultimate Life Form
   ID: 2002-02-22
@@ -21,6 +44,7 @@
        
         <!-- Contact Section -->
     <h1>We value your feedback please Write your here Complane or Use the link to send me an Email</h1>
+    <?php echo $message; ?>
     <br>
 
     <div class="box2">
@@ -41,7 +65,7 @@
     <!-- Complaint form with textarea input -->
     <form method="post">
     <textarea id="Complane" name="Complane" placeholder="Here Please"></textarea>
-    <input type ="submit" class="SubmitB">
+    <input type ="submit" class="SubmitB" name= "submit_btn" id= "submit_btn">
     
     </form>
 

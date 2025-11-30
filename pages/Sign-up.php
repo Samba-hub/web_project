@@ -1,3 +1,32 @@
+<?php
+
+require_once '../db_connect.php';
+$message = ""; 
+if(isset($_POST['submit_button'])){
+    $username = $_POST['username'];
+    $fname    = $_POST['fname'];
+    $lname    = $_POST['lname'];
+    $email    = $_POST['email'];
+    $password    = $_POST['userpassword'];
+
+    $sql = "INSERT INTO login
+            (email, first_name, last_name, user_name, user_password) 
+            VALUES 
+            ('$email', '$fname', '$lname', '$username', '$password')";
+
+    if (mysqli_query($conn, $sql)) {
+        $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
+    } else {
+        $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+    }
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +44,7 @@
          
         <?php include '../includes/navbar.php'; ?>
         <h1>Sign-up Page</h1>
+        <?php echo $message; ?>
         
         <div class="form_div">
         <form method="POST" name="registerform" id="registerform" onsubmit="return validateSign_Up()">
