@@ -63,7 +63,7 @@ if(isset($_POST['submit_btn'])){
     <p>Address: King Abdulaziz University, Jeddah, Saudi Arabia</p>
    
     <!-- Complaint form with textarea input -->
-    <form method="post">
+    <form method="post" onsubmit = "return validateComplaint()">
     <textarea id="Complane" name="Complane" placeholder="Here Please"></textarea>
     <input type ="submit" class="SubmitB" name= "submit_btn" id= "submit_btn">
     
@@ -71,5 +71,6 @@ if(isset($_POST['submit_btn'])){
 
     <!-- Footer Section with contact and quick links -->
     <?php include '../includes/footer.php'; ?>
+    <script type = "text/javascript" src = "../script/validation.js"></script>
 </body>
 </html>
