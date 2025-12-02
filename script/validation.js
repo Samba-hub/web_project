@@ -1,7 +1,4 @@
 function validateForm(){
-   //Username validation
-    if(!validateUserName())
-        return false;
    
     //FirstName validation
     if(!validateFirstName())

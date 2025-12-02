@@ -1,6 +1,7 @@
 
 <?php 
-
+//This will create  a session if one doesn't already exist.
+session_start();
 require_once '../db_connect.php';
 $message = "";
 if(isset($_POST["submit_button"])){
@@ -12,6 +13,10 @@ if(isset($_POST["submit_button"])){
     $result = mysqli_query($conn,$sql);
 
     if(mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_array($result);
+        //Store the user_id of the user into this global variable called $_session.
+        $_SESSION["user_id"] =  $row["user_id"];
+       
 
         $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Login successful!</div>";
     }

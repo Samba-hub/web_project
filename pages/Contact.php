@@ -1,14 +1,15 @@
 <?php
+session_start();
 require_once '../db_connect.php';
 $message= "";
 
 if(isset($_POST['submit_btn'])){
     $complaint= $_POST['Complane'];
-
+$user_id = $_SESSION["user_id"];
     $sql= "INSERT INTO complaints
-            (complaint_text)
+            (complaint_text,user_id)
             VALUES
-            ('$complaint')";
+            ('$complaint','$user_id')";
     
     if (mysqli_query($conn, $sql)) {
         $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";

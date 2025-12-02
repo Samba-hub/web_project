@@ -6,17 +6,14 @@
 <!-- HTML5 doctype declaration -->
 
 <?php
+session_start();
 require_once '../db_connect.php';
 
 $message = ""; 
 
 if(isset($_POST['submit_form'])){
     
-    // $username = $_POST['username'];
-    // $fname    = $_POST['fname'];
-    // $lname    = $_POST['lname'];
-    // $email    = $_POST['email'];
-    // $phone    = $_POST['phone'];
+    
     
 
     $status   = isset($_POST['status']) ? mysqli_real_escape_string($conn, $_POST['status']) : '';
@@ -26,12 +23,13 @@ if(isset($_POST['submit_form'])){
     $price    = $_POST['Price'];
     $condition= $_POST['Condition'];
     $feedback = $_POST['Feedback'];
+    $user_id = $_SESSION["user_id"];
 
 
     $sql = "INSERT INTO form 
-            (sell_or_buy, game_name, quantity, price, game_condition, feedback) 
+            (sell_or_buy, game_name, quantity, price, game_condition, feedback,user_id) 
             VALUES 
-            ('$status', '$gname', '$quantity', '$price', '$condition', '$feedback')";
+            ('$status', '$gname', '$quantity', '$price', '$condition', '$feedback','$user_id')";
 
     if (mysqli_query($conn, $sql)) {
         $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
