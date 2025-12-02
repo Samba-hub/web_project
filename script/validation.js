@@ -48,6 +48,16 @@ function validateForm(){
     
 }
 
+function validateComplaint(){
+var complaint = document.getElementById("Complane");
+if(complaint.value  == ""){
+    alert("The text is empty.");
+    return false;
+}
+return true;
+
+}
+
 function validateAccount(){
     //Username validation
     if(!validateUserName())
