@@ -1,7 +1,4 @@
 function validateForm(){
-   //Username validation
-    if(!validateUserName())
-        return false;
    
     //FirstName validation
     if(!validateFirstName())
@@ -46,6 +43,16 @@ function validateForm(){
     
 
     
+}
+
+function validateComplaint(){
+var complaint = document.getElementById("Complane");
+if(complaint.value  == ""){
+    alert("The text is empty.");
+    return false;
+}
+return true;
+
 }
 
 function validateAccount(){

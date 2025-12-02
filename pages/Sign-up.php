@@ -14,11 +14,24 @@ if(isset($_POST['submit_button'])){
             VALUES 
             ('$email', '$fname', '$lname', '$username', '$password')";
 
-    if (mysqli_query($conn, $sql)) {
-        $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
-    } else {
-        $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+
+
+    try{
+      $value =  mysqli_query($conn, $sql);
+
+    if($value == true){
+    $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
+
+}
+
+
     }
+
+catch(Exception $e){
+
+     $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+}
+
 }
 
 

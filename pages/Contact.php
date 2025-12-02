@@ -1,14 +1,15 @@
 <?php
+session_start();
 require_once '../db_connect.php';
 $message= "";
 
 if(isset($_POST['submit_btn'])){
     $complaint= $_POST['Complane'];
-
+$user_id = $_SESSION["user_id"];
     $sql= "INSERT INTO complaints
-            (complaint_text)
+            (complaint_text,user_id)
             VALUES
-            ('$complaint')";
+            ('$complaint','$user_id')";
     
     if (mysqli_query($conn, $sql)) {
         $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
@@ -63,7 +64,7 @@ if(isset($_POST['submit_btn'])){
     <p>Address: King Abdulaziz University, Jeddah, Saudi Arabia</p>
    
     <!-- Complaint form with textarea input -->
-    <form method="post">
+    <form method="post" onsubmit = "return validateComplaint()">
     <textarea id="Complane" name="Complane" placeholder="Here Please"></textarea>
     <input type ="submit" class="SubmitB" name= "submit_btn" id= "submit_btn">
     
@@ -71,5 +72,6 @@ if(isset($_POST['submit_btn'])){
 
     <!-- Footer Section with contact and quick links -->
     <?php include '../includes/footer.php'; ?>
+    <script type = "text/javascript" src = "../script/validation.js"></script>
 </body>
 </html>
