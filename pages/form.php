@@ -6,37 +6,49 @@
 <!-- HTML5 doctype declaration -->
 
 <?php
-session_start();
 require_once '../db_connect.php';
+session_start();
 
-$message = ""; 
 
 if(isset($_POST['submit_form'])){
-    
-    
+    //check if the session has a registered user 
+    if (!empty($_SESSION["user_id"])) {
+      $user_id = $_SESSION["user_id"];
+
+    // $username = $_POST['username'];
+    // $fname    = $_POST['fname'];
+    // $lname    = $_POST['lname'];
+    // $email    = $_POST['email'];
+    // $phone    = $_POST['phone'];
     
 
-    $status   = isset($_POST['status']) ? mysqli_real_escape_string($conn, $_POST['status']) : '';
-
+    $status   = $_POST['status'];
     $gname    = $_POST['gname'];
     $quantity = $_POST['quantity'];
     $price    = $_POST['Price'];
     $condition= $_POST['Condition'];
     $feedback = $_POST['Feedback'];
-    $user_id = $_SESSION["user_id"];
 
 
     $sql = "INSERT INTO form 
-            (sell_or_buy, game_name, quantity, price, game_condition, feedback,user_id) 
+            (user_id, sell_or_buy, game_name, quantity, price, game_condition, feedback) 
             VALUES 
-            ('$status', '$gname', '$quantity', '$price', '$condition', '$feedback','$user_id')";
+            ('$user_id', '$status', '$gname', '$quantity', '$price', '$condition', '$feedback')";
 
     if (mysqli_query($conn, $sql)) {
-        $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
+        echo "<script>window.alert('form submitted successfully');</script>";
     } else {
-        $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+        echo "<script>window.alert('Something went wrong. please try again later');</script>";
     }
 }
+  //user not registered or not logged in
+  else{
+    echo "<script>window.alert('please login or register an account');</script>";
+  }
+}
+
+include "../includes/logging.php";
+
 ?>
 
 
@@ -56,14 +68,15 @@ if(isset($_POST['submit_form'])){
 <body>
   <!-- Navigation bar -->
   <?php include '../includes/navbar.php'; ?>
+  <?php include '../includes/log_btn.php'; ?>
+
 
   <!-- Page heading -->
   <h1>Please fill this form</h1>
-  <?php echo $message; ?>
 
   <!-- Form for selling or buying games -->
   <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
-
+    
     <!-- Personal Info Section -->
     <fieldset>
       <legend>Personal Info</legend>

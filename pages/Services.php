@@ -1,3 +1,5 @@
+<?php include "../includes/logging.php" ?>;
+
 <!-- 
   Name: Ultimate Life Form
   ID: 2002-02-22
@@ -18,6 +20,7 @@
 <body>
     <!-- Navigation Bar -->
     <?php include '../includes/navbar.php'; ?>
+    <?php include '../includes/log_btn.php'; ?>
     <!-- Page Heading -->
     <h1>Our Services</h1>
     <!-- Introduction Paragraph -->

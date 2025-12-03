@@ -4,6 +4,7 @@
   Date: ????-??-??
 -->
 <!-- HTML5 doctype declaration -->  
+ <?php include "../includes/logging.php" ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +21,7 @@
 <body>
     <!-- Navigation bar -->
     <?php include '../includes/navbar.php'; ?>
+    <?php include '../includes/log_btn.php'; ?>
 
     <!-- Page Heading -->
     <h1>About Our Retro Game Store</h1>

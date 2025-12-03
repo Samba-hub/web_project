@@ -1,3 +1,5 @@
+<?php include "../includes/logging.php" ?>;
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +21,8 @@
 <body>
 
 <?php  include '../includes/navbar.php';    ?>
+  <?php include '../includes/log_btn.php'; ?>
+
 
 <div class = "page">
 

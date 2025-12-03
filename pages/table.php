@@ -6,7 +6,7 @@ $user_id = $_SESSION["user_id"];
 
 
 
-
+include "../includes/logging.php";
 
 
 
@@ -35,6 +35,7 @@ $user_id = $_SESSION["user_id"];
         <!-- Navigation bar -->
          
         <?php include '../includes/navbar.php'; ?>
+        <?php include '../includes/log_btn.php'; ?>
         <h1>Table Page</h1>
         <table class="Table">
     <caption>Your forms</caption>

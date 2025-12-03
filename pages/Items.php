@@ -4,6 +4,7 @@
   Date: ????-??-??
 -->
 <!-- HTML5 doctype declaration -->  
+ <?php include "../includes/logging.php" ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +21,8 @@
 <body>
     <!-- Navigation bar -->
     <?php include '../includes/navbar.php'; ?>
+  <?php include '../includes/log_btn.php'; ?>
+
 
     <!-- Main heading for the page -->
     <h1>Our Items/Products</h1>
