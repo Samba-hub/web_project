@@ -1,3 +1,5 @@
+<?php include "../includes/logging.php" ?>;
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +17,7 @@
 
   <body>
     <?php include '../includes/navbar.php'; ?>
+    <?php include '../includes/log_btn.php'; ?>
     <h1>Resume Page</h1>
     
     <object class="pdf" 

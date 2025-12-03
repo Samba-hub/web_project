@@ -47,12 +47,7 @@ if(isset($_POST['submit_form'])){
   }
 }
 
-if (isset($_POST['logout_btn'])) {
-
-    $_SESSION = [];
-    session_destroy();
-    echo "<script>window.alert('Logged out successfully');</script>";
-}
+include "../includes/logging.php";
 
 ?>
 
@@ -73,6 +68,8 @@ if (isset($_POST['logout_btn'])) {
 <body>
   <!-- Navigation bar -->
   <?php include '../includes/navbar.php'; ?>
+  <?php include '../includes/log_btn.php'; ?>
+
 
   <!-- Page heading -->
   <h1>Please fill this form</h1>
@@ -80,7 +77,6 @@ if (isset($_POST['logout_btn'])) {
   <!-- Form for selling or buying games -->
   <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
     
-  <button type="submit" name="logout_btn">Log Out</button>
     <!-- Personal Info Section -->
     <fieldset>
       <legend>Personal Info</legend>

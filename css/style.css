@@ -703,3 +703,9 @@ width:500px
         min-width: 300px;  
     }
 }
+
+.log_btn{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
