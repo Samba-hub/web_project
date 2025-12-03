@@ -10,7 +10,12 @@ if (isset($_POST['logout_btn'])) {
 }
 
 if (isset($_POST["login_btn"])) {
+    if (empty($_SESSION["user_id"])) {
     header("Location: register.php");
     exit;
+    }
+    else{
+        echo '<script>window.alert("user already logged in")</script>';
+    }
 }
 ?>

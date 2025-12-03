@@ -1,4 +1,6 @@
-<?php include "../includes/logging.php" ?>;
+<?php 
+session_start();
+include "../includes/logging.php" ?>;
 
 <!-- 
   Name: Ultimate Life Form

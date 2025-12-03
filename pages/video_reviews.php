@@ -1,5 +1,6 @@
-<?php include "../includes/logging.php" ?>;
-
+<?php 
+session_start();
+include "../includes/logging.php" ?>;
 <!DOCTYPE html>
 <html lang="en">
   <head>
