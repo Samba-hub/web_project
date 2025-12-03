@@ -5,6 +5,10 @@
 -->
 
 <!-- HTML5 doctype declaration -->
+
+<?php 
+session_start();
+include "includes/logging.php" ?>;
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +25,7 @@
 <body>
     <!-- Navigation Bar -->
     <?php include 'includes/navbar.php'; ?>
+    <?php include 'includes/log_btn.php'; ?>
     
     <!-- Page Heading -->
     <h1>Ultimate Life Form Retro Store</h1>
