@@ -1,5 +1,9 @@
 function validateForm(){
    
+    //Username validation
+    if(!validateUserName())
+        return false;
+
     //FirstName validation
     if(!validateFirstName())
         return false;
@@ -28,14 +32,19 @@ function validateForm(){
     if(!validateQuantity())
         return false;
 
-    //Condition validation
-    if(!validateFeedback())
-        return false;
-
     //Price validation
     if(!validatePrice())
         return false;
 
+    //Condition validation
+    if(!validateCondition())
+        return false;
+
+    //FeedBack validation
+    if(!validateFeedback())
+        return false;
+
+    
     //Term validation
     if(!validateTerm())
         return false;
@@ -44,14 +53,31 @@ function validateForm(){
 
     
 }
+function validateCondition(){
+    var condition = document.getElementById("Condition").value;
+    var validCondition = ["new","good","Loose","newCIB","goodCIB","LooseCIB"];
+
+    if(!validCondition.includes(condition)){
+        alert("Invaled Condition you must Selece from the list");
+        return false;
+    }
+    return true;
+}
 
 function validateComplaint(){
 var complaint = document.getElementById("Complane");
 if(complaint.value  == ""){
-    alert("The text is empty.");
+    alert("The Complane is empty.");
     return false;
 }
-return true;
+ var c = document.getElementById("Complane").value;
+
+    if (c.length < 5|| c.length > 100){
+        alert("Enter a Complane that is 5 charecter and more");
+        return false;
+    }
+
+    return true;
 
 }
 
@@ -99,8 +125,8 @@ function validateuserpassword(){
 
     var userpassword = document.getElementById("userpassword").value;
 
-    if (userpassword.length < 8|| userpassword.length > 13){
-        alert("Enter a password that is at least 8 charecter and less than 13");
+    if (userpassword.length < 8|| userpassword.length > 25){
+        alert("Enter a password that is at least 8 charecter");
         return false;
     }
 
@@ -172,7 +198,7 @@ if(document.getElementById("Feedback").value == ""){
 
     var f = document.getElementById("Feedback").value;
 
-    if (f.length < 0|| f.length > 100){
+    if (f.length < 3|| f.length > 100){
         alert("Enter a feedback that is 3 charecter and more");
         return false;
     }
@@ -192,7 +218,7 @@ function validateGameName(){
     var gname = document.getElementById("gname").value;
 
     if (gname.length < 4 || gname.length > 100){
-        alert("Enter a Game Name that is more than 4 charecter and less than 100 charecter");
+        alert("Enter a Game Name that is more than 4 charecter");
         return false;
     }
 
