@@ -8,7 +8,7 @@
 
 <?php 
 session_start();
-include "includes/logging.php" ?>;
+include "includes/logging.php" ;?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +70,7 @@ include "includes/logging.php" ?>;
         </a>
    </div>
 
-   <?php include './includes/footer.php' ?>
+   <?php include './includes/footer.php' ;?>
 </body>
 
 </html>

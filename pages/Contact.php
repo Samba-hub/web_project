@@ -1,12 +1,37 @@
 <?php
 session_start();
+
+//Secure Design
+if (!isset($_SESSION["user_id"])) {
+    header("Location: /final_project/pages/register.php");
+    return;
+}
+
 require_once '../db_connect.php';
 $message = "";
 
 if (isset($_POST['submit_btn'])) {
-    if (!empty($_SESSION["user_id"])) {
+    //if (!empty($_SESSION["user_id"])) {
         $complaint = $_POST['Complane'];
         $user_id = $_SESSION["user_id"];
+
+        $errors = [];
+      //validateComplaint
+      if(empty($complaint)){
+        $errors [] = "Complaint must be filled";
+      }
+      if (strlen($complaint) < 5 || strlen($complaint) > 100){
+         $errors [] = "Invalid Complaint must at least be 5 charecters";
+      }
+
+      //Stop If there is an Error
+      if(!empty($errors)){
+        foreach ($errors as $e){
+          echo "<script>alert('$e');</script>";
+        }
+        return;
+      }
+      /*
         $sql = "INSERT INTO complaints
             (complaint_text,user_id)
             VALUES
@@ -20,9 +45,23 @@ if (isset($_POST['submit_btn'])) {
 
     } else {
         echo "<script>window.alert('please login or register an account');</script>";
-    }
+    }*/
+        //XSS Protection
+        //$complaint = htmlspecialchars($complaint, ENT_QUOTES,'UTF-8');
+        //SQL Injection
+        $stmt = mysqli_prepare($conn,"INSERT INTO complaints (complaint_text, user_id) VALUES (?,?)");
+        mysqli_stmt_bind_param($stmt,"si",$complaint,$user_id);
+        $success =mysqli_stmt_execute($stmt);
+        if ($success) {
+            echo "<script>alert('Complaint uploaded successfully');</script>";
+        } else {
+            echo "<script>alert('Something went wrong');</script>";
+        }
 
-}
+    }// else {
+        //echo "<script>alert('Please login or register an account');</script>";
+//}
+//}
 
 include "../includes/logging.php";
 
