@@ -9,17 +9,24 @@
 require_once '../db_connect.php';
 session_start();
 
+//Secure Design
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: /final_project/pages/register.php");
+    return;
+}
+
 
 if(isset($_POST['submit_form'])){
     //check if the session has a registered user 
-    if (!empty($_SESSION["user_id"])) {
+   // if (!empty($_SESSION["user_id"])) {
       $user_id = $_SESSION["user_id"];
 
-    // $username = $_POST['username'];
-    // $fname    = $_POST['fname'];
-    // $lname    = $_POST['lname'];
-    // $email    = $_POST['email'];
-    // $phone    = $_POST['phone'];
+     $username = $_POST['username'];
+     $fname    = $_POST['fname'];
+     $lname    = $_POST['lname'];
+     $email    = $_POST['email'];
+     $phone    = $_POST['phone'];
     
 
     $status   = $_POST['status'];
@@ -29,23 +36,140 @@ if(isset($_POST['submit_form'])){
     $condition= $_POST['Condition'];
     $feedback = $_POST['Feedback'];
 
+    $A_term     = $_POST['agree-to-term'];
+    $A_data     = $_POST['agree-to-use-of-data'];
+      //php vaildaition
+      $errors = [];
+      //username
+      if(empty($username)){
+        $errors [] = "Username must be filled";
+      }
+      if (strlen($username) < 3 || strlen($username) > 100){
+         $errors [] = "Invalid username must at least be 3 charecters";
+      }
 
-    $sql = "INSERT INTO form 
-            (user_id, sell_or_buy, game_name, quantity, price, game_condition, feedback) 
-            VALUES 
-            ('$user_id', '$status', '$gname', '$quantity', '$price', '$condition', '$feedback')";
+      //Firstname
+      if(empty($fname)){
+        $errors [] = "First name must be filled";
+      }
+      if (strlen($fname) < 3 || strlen($fname) > 100){
+         $errors [] = "Invalid First name at least be 3 charecters";
+      }
 
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>window.alert('form submitted successfully');</script>";
+      //Lastname
+      if(empty($lname)){
+        $errors [] = "Last name must be filled";
+      }
+      if (strlen($lname) < 5 || strlen($lname) > 100){
+         $errors [] = "Invalid Last name at least be 5 charecters";
+      }
+
+      //Email
+      if(empty($email)){
+        $errors [] = "Email must be filled";
+      }
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+         $errors [] = "Invalid Email";
+      }
+
+      //Phone
+      if(empty($phone)){
+         $errors [] = "Phone Number must be filled";
+      }
+      if (!ctype_digit($phone) || strlen($phone) != 10) {
+         $errors[] = "Invalid phone number, Phone Number must be 10 digits";
+      }
+      
+      //Status
+      if (empty($status)){
+         $errors [] = "You must select either sell or buy";
+      }
+
+      //Gamename
+      if(empty($gname)){
+        $errors [] = "Game Name must be filled";
+      }
+      if (strlen($gname) < 4 || strlen($gname) > 100){
+         $errors [] = "Game Name must be at least 4 charecters";
+      }
+
+      //Quantity
+      if(empty($quantity)){
+        $errors [] = "Quantity must be filled";
+      }
+      if(!is_numeric($quantity)){
+        $errors [] = "Quantity must be Number";
+      }
+      if ($quantity < 1 || $quantity > 100){
+         $errors [] = "Quantity must be at between 1 and 100";
+      }
+
+      //Price
+      if(empty($price)){
+        $errors [] = "Price must be filled";
+      }
+      if(!is_numeric($price)){
+        $errors [] = "Price must be Number";
+      }
+      if ($price < 5 || $price > 1000){
+         $errors [] = "Price must be at between 5 and 1000";
+      }
+
+      //Condition
+      $validCondition = ["new","good","Loose","newCIB","goodCIB","LooseCIB"];
+      if(!in_array($condition,$validCondition)){
+        $errors [] = "Invalid Game Condition";
+      }
+
+      //FeedBack
+      if(empty($feedback)){
+        $errors [] = "FeedBack must be filled";
+      }
+      if (strlen($feedback) < 3 || strlen($feedback) > 100){
+         $errors [] = "Invalid FeedBack must at least be 3 charecters";
+      }
+
+      //Terms of Service
+      if(empty($A_term)){
+        $errors [] = "You must Agree to the Terms of Service";
+      }
+      //Use of Data
+      if(empty($A_data)){
+         $errors [] = "You must Agree to the Use of Data";
+      }
+
+      //Stop If there is an Error
+      if(!empty($errors)){
+        foreach ($errors as $e){
+          echo "<script>alert('$e');</script>";
+        }
+        return;
+      }
+
+       //XSS Protection
+       /*moved to table page
+    $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
+    $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
+    $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
+    $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
+    $phone = htmlspecialchars($phone, ENT_QUOTES,'UTF-8');
+    $status = htmlspecialchars($status, ENT_QUOTES,'UTF-8');
+    $gname = htmlspecialchars($gname, ENT_QUOTES,'UTF-8');
+    $quantity = htmlspecialchars($quantity, ENT_QUOTES,'UTF-8');
+    $price = htmlspecialchars($price, ENT_QUOTES,'UTF-8');
+    $condition = htmlspecialchars($condition, ENT_QUOTES,'UTF-8');
+    $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');*/
+    //SQL Injection
+    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id, sell_or_buy, game_name,quantity, price, game_condition, feedback) VALUES (?,?,?,?,?,?,?)");
+    mysqli_stmt_bind_param($stmt,"issidss",$user_id,$status,$gname,$quantity,$price,$condition,$feedback);
+    $success = mysqli_stmt_execute($stmt);
+    if ($success) {
+    echo "<script>alert('form submitted successfully');</script>";
     } else {
-        echo "<script>window.alert('Something went wrong. please try again later');</script>";
+    echo "<script>alert('Something went wrong. please try again later');</script>";
     }
 }
-  //user not registered or not logged in
-  else{
-    echo "<script>window.alert('please login or register an account');</script>";
-  }
-}
+
 
 include "../includes/logging.php";
 
@@ -94,7 +218,7 @@ include "../includes/logging.php";
       <input type="text" id="email" name="email" placeholder="example@gmail.com" >
 
       <label for="phone">Phone#:<span>*</span></label>
-      <input type="tel" id="phone" name="phone" placeholder="(123)-456-7890" >
+      <input type="text" id="phone" name="phone" placeholder="(123)-456-7890" >
 
     </fieldset>
 
