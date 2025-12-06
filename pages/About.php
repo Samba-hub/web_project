@@ -6,7 +6,7 @@
 <!-- HTML5 doctype declaration -->  
 <?php 
 session_start();
-include "../includes/logging.php" ?>;
+include "../includes/logging.php" ;?>
 <!DOCTYPE html>
 <html lang="en">
 
