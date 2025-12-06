@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include "../includes/logging.php" ?>;
+include "../includes/logging.php" ;?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,13 +26,8 @@ include "../includes/logging.php" ?>;
         <div class="video_div" id="first_vblock">
           <div class="v_container_p">
             <p class="video_p">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              id sunt aliquid aliquam rerum illum beatae ullam natus eaque
-              laudantium, dolor soluta velit! Asperiores, veritatis ut quia
-              minima atque ab nisi sint saepe laudantium, iure voluptas aliquid
-              suscipit dolores officiis quis fuga unde, provident vero aperiam
-              ea porro! Cupiditate unde illo hic possimus dicta soluta libero
-              saepe. Itaque, consequatur architecto!
+              A Walkthrough of Sonic Heroes - Ocean Palace - Team Sonic this vedio was realsed around 12 years ago will help
+              any new players that are strugling in completing this level to finally do it.
             </p>
           </div>
 
@@ -52,13 +47,8 @@ include "../includes/logging.php" ?>;
         <div class="video_div" id="second_vblock">
           <div class="v_container_p">
             <p class="video_p">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              id sunt aliquid aliquam rerum illum beatae ullam natus eaque
-              laudantium, dolor soluta velit! Asperiores, veritatis ut quia
-              minima atque ab nisi sint saepe laudantium, iure voluptas aliquid
-              suscipit dolores officiis quis fuga unde, provident vero aperiam
-              ea porro! Cupiditate unde illo hic possimus dicta soluta libero
-              saepe. Itaque, consequatur architecto!
+              Crash Tag Team Racing - Walkthrough (Road To CTR Nitro-Fueled)
+              this is a game play of someone playing Crash Tag Team Racing Road to CTR Nitro-Fueled.
             </p>
           </div>
 
@@ -78,13 +68,9 @@ include "../includes/logging.php" ?>;
         <div class="video_div" id="third_vblock">
           <div class="v_container_p">
             <p class="video_p">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-              id sunt aliquid aliquam rerum illum beatae ullam natus eaque
-              laudantium, dolor soluta velit! Asperiores, veritatis ut quia
-              minima atque ab nisi sint saepe laudantium, iure voluptas aliquid
-              suscipit dolores officiis quis fuga unde, provident vero aperiam
-              ea porro! Cupiditate unde illo hic possimus dicta soluta libero
-              saepe. Itaque, consequatur architecto!
+              Jackie Chan Adventures 100% - Prologue: Mexico - Walkthrough
+              A vedio on how to achive 100% in the game these type of vedio is very usefull if a player trys to get 100% this might
+              unlock a secret ending or even a custom skin.
             </p>
           </div>
 
