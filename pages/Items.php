@@ -41,7 +41,7 @@ include "../includes/logging.php" ;?>
             <p><q>The world is in crisis, and only Cloud and his companions can stop the looming threat of
                     Sephiroth.</q></p>
             <p>Genre: RPG</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
         
         <!-- Game 2 -->
@@ -50,7 +50,7 @@ include "../includes/logging.php" ;?>
             <p><strong>Crash Bandicoot</strong></p>
             <p><q>Join Crash as he battles the evil Dr. Cortex and spins his way through wild levels!</q></p>
             <p>Genre: Platformer</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
    
@@ -66,7 +66,7 @@ include "../includes/logging.php" ;?>
             <p><q>James Sunderland returns to the eerie town of Silent Hill after receiving a letter from his deceased
                     wife. As he searches for answers, the fog hides far more than memories.</q></p>
             <p>Genre: Survival Horror</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
        
         <!-- Game 2 -->
@@ -76,7 +76,7 @@ include "../includes/logging.php" ;?>
             <p><q>Step into the jungle with Naked Snake on a Cold War-era mission filled with stealth, betrayal, and the
                     roots of the Metal Gear saga.</q></p>
             <p>Genre: Stealth Action</p>
-            <button class="buy-button">Buy</button>
+           
         </div>
 
     </div>
@@ -94,7 +94,7 @@ include "../includes/logging.php" ;?>
             <p><q>Enter a new era of warfare where your choices shape the future. Fight across time periods with
                     futuristic tech and branching missions.</q></p>
             <p>Genre: First-Person Shooter</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
        
         <!-- Game 2 -->
@@ -104,7 +104,7 @@ include "../includes/logging.php" ;?>
             <p><q>Join Nathan Drake as he embarks on a globe-trotting quest in search of the lost city of Ubar,
                     uncovering ancient secrets and deadly conspiracies.</q></p>
             <p>Genre: Action-Adventure</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
    
@@ -121,7 +121,7 @@ include "../includes/logging.php" ;?>
             <p><q>Step into the mystical land of Hyrule and save Princess Zelda by battling evil across two worlds in
                     this classic top-down adventure.</q></p>
             <p>Genre: Action-Adventure</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
       
         <!-- Game 2 -->
@@ -131,7 +131,7 @@ include "../includes/logging.php" ;?>
             <p><q>Join intergalactic bounty hunter Samus Aran on a haunting mission through planet Zebes to recover a
                     stolen Metroid organism.</q></p>
             <p>Genre: Metroidvania</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
     
@@ -147,7 +147,7 @@ include "../includes/logging.php" ;?>
             <p><q>Leap into 3D for the first time as Mario explores Princess Peach's castle and hunts down Power Stars
                     to stop Bowser's evil plans.</q></p>
             <p>Genre: 3D Platformer</p>
-            <button class="buy-button">Buy</button>
+           
         </div>
       
         <!-- Game 2 -->
@@ -157,7 +157,7 @@ include "../includes/logging.php" ;?>
             <p><q>As secret agent Joanna Dark, infiltrate dataDyne and uncover a conspiracy involving aliens, espionage,
                     and corporate warfare.</q></p>
             <p>Genre: First-Person Shooter</p>
-            <button class="buy-button">Buy</button>
+           
         </div>
     </div>
     
@@ -173,7 +173,7 @@ include "../includes/logging.php" ;?>
             <p><q>Nintendo's greatest heroes clash in frantic battles across iconic stages, fight, dodge, and smash your
                     way to victory!</q></p>
             <p>Genre: Fighting</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
         
         <!-- Game 2 -->
@@ -184,7 +184,7 @@ include "../includes/logging.php" ;?>
             <p><q>TSail across the Great Sea with young Link in a cel-shaded adventure full of treasure, pirates, and
                     ancient secrets.</q></p>
             <p>Genre: Action-Adventure</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
     
@@ -201,7 +201,7 @@ include "../includes/logging.php" ;?>
             <p><q>Join Sonic and Tails as they dash through zones at supersonic speed to defeat Dr. Robotnik and save
                     the world!</q></p>
             <p>Genre: Platformer</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
 
@@ -218,7 +218,7 @@ include "../includes/logging.php" ;?>
             <p><q>Fly through fantastical dreamscapes and defeat nightmares in this stunning and surreal SEGA
                     classic.</q></p>
             <p>Genre: Flight Platformer</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
 
@@ -235,7 +235,7 @@ include "../includes/logging.php" ;?>
             <p><q>Embark on a cinematic journey of revenge and mystery through a living, breathing open world of 1980s
                     Japan.</q></p>
             <p>Genre: Open World</p>
-            <button class="buy-button">Buy</button>
+            
         </div>
     </div>
  
