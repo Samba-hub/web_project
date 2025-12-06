@@ -675,15 +675,11 @@ width:500px
         text-align: center;
     }
 
-.Table_container{
-    
-    min-width:00px;
-    overflow-wrap:anywhere;
 
-}  
 .Table {
     width: 100%;
     border: 10px solid black;
+    overflow-wrap:anywhere;
 }
 
 .Table th, .Table td {
@@ -701,13 +697,12 @@ width:500px
     font-size: 18px;
 }
 
-
 .log_btn{
     display: flex;
     justify-content: flex-end;
     padding: 20px;
 }
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .Table th, .Table td {
         font-size: 12px;
         padding: 5px;

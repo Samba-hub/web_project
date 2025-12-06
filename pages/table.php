@@ -52,7 +52,7 @@ include "../includes/logging.php";
         <?php include '../includes/navbar.php'; ?>
         <?php include '../includes/log_btn.php'; ?>
         <h1>Table Page</h1>
-        <div class="Table_container">
+       
         <table class="Table">
     <caption>Your forms</caption>
 
@@ -106,7 +106,7 @@ echo "<tr><td colspan=\"7\"> This is all The Forms</td> </tr>";
 
 else{
 
-echo "<tr><td>You have not submitted any forms.</td></tr>";
+echo "<tr><td>You have not submitted any Forms</td></tr>";
 
 }
 
@@ -126,9 +126,9 @@ else{
 
    
 </table>
-</div>
+
 <!---<br>-->
-<div class="Table_container">
+
 <table class="Table">
     <caption>Your Complaints</caption>
 
@@ -161,7 +161,7 @@ echo "<tr><td colspan=\"2\"> This is all The Complaints</td> </tr>";
 
 else{
 
-echo "<tr><td colspan=\"2\">There is no forms that you have submitted";
+echo "<tr><td>There is no  Complaints that you have submitted</td></tr>";
 
 }
 
@@ -181,7 +181,9 @@ else{
 
    
 </table>
-</div>
+
+<br>
+<button onclick="window.print()">Print</button>
         <?php include '../includes/footer.php'; ?>
     </body>
 
