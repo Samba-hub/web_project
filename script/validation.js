@@ -143,7 +143,7 @@ function validateUserName(){
 
     var username = document.getElementById("username").value;
 
-    if (username.length < 3|| username.length > 100){
+    if (username.length < 3|| username.length > 20){
         alert("Enter a username that is 3 charecter and more");
         return false;
     }
@@ -162,7 +162,7 @@ function validateLastName(){
 
     var lname = document.getElementById("lname").value;
 
-    if (lname.length < 5 || lname.length > 100){
+    if (lname.length < 5 || lname.length > 20){
         alert("Enter a your Last Name that is 5 charecter and more");
         return false;
     }
@@ -181,7 +181,7 @@ function validateFirstName(){
 
     var fname = document.getElementById("fname").value;
 
-    if (fname.length < 3|| fname.length > 100){
+    if (fname.length < 3|| fname.length > 20){
         alert("Enter a Name that is 3 charecter and more");
         return false;
     }
@@ -217,7 +217,7 @@ function validateGameName(){
 
     var gname = document.getElementById("gname").value;
 
-    if (gname.length < 4 || gname.length > 100){
+    if (gname.length < 4 || gname.length > 30){
         alert("Enter a Game Name that is more than 4 charecter");
         return false;
     }
