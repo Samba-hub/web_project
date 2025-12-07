@@ -66,7 +66,7 @@ include "includes/logging.php" ;?>
         
         <!-- Image -->
         <a href="pages/Items.php" target="_self" title="Click here to go to the Products/Itmes page">
-            <img src="images/GOAT.jpeg" alt="THE GOAT">
+            <img src="./images/StoreLogo.png" alt="THE GOAT">
         </a>
    </div>
 

@@ -143,8 +143,8 @@ function validateUserName(){
 
     var username = document.getElementById("username").value;
 
-    if (username.length < 3|| username.length > 100){
-        alert("Enter a username that is 3 charecter and more");
+    if (username.length < 3|| username.length > 20){
+        alert("Enter a username that is more than  3 charecter and less than or equal to 20");
         return false;
     }
 
