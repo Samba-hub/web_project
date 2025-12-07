@@ -62,12 +62,19 @@ INSERT INTO `complaints` (`complaints_id`, `user_id`, `complaint_text`) VALUES
 CREATE TABLE `form` (
   `form_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
+  `user_name` varchar(20) DEFAULT NULL,
+  `first_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL,
   `sell_or_buy` varchar(4) DEFAULT NULL,
   `game_name` varchar(30) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `price` decimal(5,2) DEFAULT NULL,
   `game_condition` varchar(10) DEFAULT NULL,
-  `feedback` varchar(50) DEFAULT NULL
+  `feedback` varchar(50) DEFAULT NULL,
+  `terms_of_Service` boolean DEFAULT NULL,
+  `use_of_Data` boolean DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

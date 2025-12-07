@@ -159,9 +159,13 @@ if(isset($_POST['submit_form'])){
     $price = htmlspecialchars($price, ENT_QUOTES,'UTF-8');
     $condition = htmlspecialchars($condition, ENT_QUOTES,'UTF-8');
     $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');*/
-    //SQL Injection
-    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id, sell_or_buy, game_name,quantity, price, game_condition, feedback) VALUES (?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($stmt,"issidss",$user_id,$status,$gname,$quantity,$price,$condition,$feedback);
+   $A_term = isset($_POST['agree-to-term']) ? 1 : 0; //convert from boolean to intgar
+   $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
+
+   
+    //SQL Injection 
+    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id,user_name,first_name,last_name,email,phone, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    mysqli_stmt_bind_param($stmt,"isssssssidssii",$user_id,$username,$fname,$lname,$email,$phone,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
     $success = mysqli_stmt_execute($stmt);
     if ($success) {
     echo "<script>alert('form submitted successfully');</script>";
@@ -271,12 +275,12 @@ include "../includes/logging.php";
       <legend>Term of Services & Use of Data:</legend>
          <div>
          <label>
-         <input type="checkbox" id="agree-to-term" name="agree-to-term" value="Agree-to-term-of-service">
+         <input type="checkbox" id="agree-to-term" name="agree-to-term" value="On">
          <span>*</span> I Agree to the term of Services.
          </label>
 
          <label>
-         <input type="checkbox" id="agree-to-use-of-data" name="agree-to-use-of-data" value="Agree-to-use-of-data">
+         <input type="checkbox" id="agree-to-use-of-data" name="agree-to-use-of-data" value="On">
          <span>*</span> I Agree to the use of my data.
          </label>
          </div>
