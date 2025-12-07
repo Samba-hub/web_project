@@ -1,5 +1,5 @@
 <!-- 
-  Name: Ultimate Life Form
+  Name: retro
   ID: 2002-02-22
   Date: ????-??-??
 -->
@@ -13,7 +13,7 @@ include "../includes/logging.php" ;?>
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="retro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items</title>
     <link rel="stylesheet" href="../css/style.css">

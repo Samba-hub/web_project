@@ -1,5 +1,5 @@
 <!-- 
-  Name: Ultimate Life Form
+  Name: retro
   ID: 2002-02-22
   Date: ????-??-??
 -->
@@ -13,7 +13,7 @@ include "../includes/logging.php" ;?>
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="retro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -30,7 +30,7 @@ include "../includes/logging.php" ;?>
 
     <!-- Store Introduction Paragraph -->
     <p class="box2">
-        <cite>Ultimate Life Form Retro Store</cite>: is a way deliver a nostalgic experience for retro gamers. It allows users to browse, buy, and even sell classic games from beloved systems such as the PS1, PS2, SNES, Sega Genesis, and more.
+        <cite>retro Retro Store</cite>: is a way deliver a nostalgic experience for retro gamers. It allows users to browse, buy, and even sell classic games from beloved systems such as the PS1, PS2, SNES, Sega Genesis, and more.
     </p>
 
     <!-- Unordered List of Store Features -->
@@ -48,10 +48,10 @@ include "../includes/logging.php" ;?>
     <div class="box2">
         <h2>What People Say</h2>
         <blockquote>
-            "Ultimate Life Form Retro Store is a treasure chest for retro gamers. It brings back memories in the most authentic way
+            "retro Retro Store is a treasure chest for retro gamers. It brings back memories in the most authentic way
             possible!"
             <span>Thank you for chosing us.</span>
-            <span>Ultimate Life Form Retro Store.</span>
+            <span>retro Retro Store.</span>
         </blockquote>
         
     </div>

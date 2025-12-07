@@ -3,7 +3,7 @@ session_start();
 
 //Secure Design
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /final_project/pages/register.php");
+    header("Location: /pages/register.php");
     return;
 }
 
@@ -38,7 +38,7 @@ include "../includes/logging.php";
 
     <head>
     <meta charset="UTF-8" >
-    <meta name="author" content="Ultimate Life Form" >
+    <meta name="author" content="retro" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Table</title>
     <link rel="stylesheet" href="../css/style.css">

@@ -1,5 +1,5 @@
 <!-- 
-  Name: Ultimate Life Form
+  Name: retro
   ID: 2002-02-22
   Date: ????-??-??
 -->
@@ -15,9 +15,9 @@ include "includes/logging.php" ;?>
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="retro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Life Form Retro Store</title>
+    <title>Retro Store</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
@@ -28,17 +28,17 @@ include "includes/logging.php" ;?>
     <?php include 'includes/log_btn.php'; ?>
     
     <!-- Page Heading -->
-    <h1>Ultimate Life Form Retro Store</h1>
+    <h1>retro Retro Store</h1>
 
     <!-- Introduction Section -->
     <div>
 
-        <p>Welcome to <cite>Ultimate Life Form Retro Store</cite>, your destination for nostalgic gaming experiences from the golden
+        <p>Welcome to <cite>retro Retro Store</cite>, your destination for nostalgic gaming experiences from the golden
             days of consoles.
             We specialize in providing authentic games from PlayStation, Nintendo, and Sega systems.</p>
 
 
-        <p>Travel back in time to the old days of gaming! <cite>Ultimate Life Form Retro Store</cite> offers nostalgia to your screen
+        <p>Travel back in time to the old days of gaming! <cite>retro Retro Store</cite> offers nostalgia to your screen
             through pixelated adventures and vintage systems.
             <br>
             <br>
@@ -66,7 +66,7 @@ include "includes/logging.php" ;?>
         
         <!-- Image -->
         <a href="pages/Items.php" target="_self" title="Click here to go to the Products/Itmes page">
-            <img src="images/GOAT.jpeg" alt="THE GOAT">
+            <img src="images/GameStore_Logo.jpg" alt="game store logo">
         </a>
    </div>
 

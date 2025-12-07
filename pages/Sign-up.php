@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../db_connect.php';
 $message = "";
 if (isset($_POST['submit_button'])) {
@@ -118,7 +118,7 @@ if (isset($_POST['submit_button'])) {
     
     if($success){
          $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
-          echo "<script>window.location.href='/final_project/pages/register.php';</script>";
+          echo "<script>window.location.href='/pages/register.php';</script>";
     }
     else{
          $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
@@ -140,7 +140,7 @@ include "../includes/logging.php";
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="retro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -191,7 +191,7 @@ include "../includes/logging.php";
         </form>
     </div>
     <!--javascript-->
-    <script src="/final_project/script/validation.js"></script>
+    <script src="/script/validation.js"></script>
     <?php include '../includes/footer.php'; ?>
 </body>
 

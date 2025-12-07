@@ -95,7 +95,7 @@ if (isset($_POST["submit_button"])) {
 
             $_SESSION["user_id"] = $row["user_id"];
             echo "<script>alert('Logged in successfully');</script>";
-            echo "<script>window.location.href='/final_project/index.php';</script>";
+            echo "<script>window.location.href='/index.php';</script>";
             return;
 
         } else {
@@ -123,7 +123,7 @@ include "../includes/logging.php";
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="retro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -154,13 +154,13 @@ include "../includes/logging.php";
                 </label>
                 <input type="submit" id="submit_button" name="submit_button" value="Log In">
 
-                <p>Don't have an account? <a href="/final_project/pages/Sign-up.php">Sign In</a></p>
+                <p>Don't have an account? <a href="/pages/Sign-up.php">Sign In</a></p>
             </div>
 
         </form>
     </div>
     <!--javascript-->
-    <script src="/final_project/script/validation.js"></script>
+    <script src="/script/validation.js"></script>
     <?php include '../includes/footer.php'; ?>
 </body>
 

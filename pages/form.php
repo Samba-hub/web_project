@@ -1,5 +1,5 @@
 <!-- 
-  Name: Ultimate Life Form
+  Name: retro
   ID: 2002-02-22
   Date: ????-??-??
 -->
@@ -12,7 +12,7 @@ session_start();
 //Secure Design
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /final_project/pages/register.php");
+    header("Location: /pages/register.php");
     return;
 }
 
@@ -182,7 +182,7 @@ include "../includes/logging.php";
 <head>
   <!-- Head section includes metadata, title, and stylesheet links -->
   <meta charset="UTF-8">
-  <meta name="author" content="Ultimate Life Form">
+  <meta name="author" content="retro">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
   <link rel="stylesheet" href="../css/style.css">
@@ -206,10 +206,10 @@ include "../includes/logging.php";
       <legend>Personal Info</legend>
       
       <label for="username">User name:<span>*</span></label>
-      <input type="text" id="username" name="username" placeholder="Ultimate Life Form" >
+      <input type="text" id="username" name="username" placeholder="retro" >
 
       <label for="fname">First name:<span>*</span></label>
-      <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" >
+      <input type="text" id="fname" name="fname" placeholder="retro" >
 
       <label for="lname">Last name: <span>*</span></label>
       <input type="text" id="lname" name="lname" placeholder="Alsafry" >
@@ -292,7 +292,7 @@ include "../includes/logging.php";
 
 
   <!--javascript-->
-  <script src="/final_project/script/validation.js"></script>
+  <script src="/script/validation.js"></script>
 
   <!-- Footer with contact info and quick links -->
   <?php include '../includes/footer.php'; ?>
