@@ -11,7 +11,7 @@ require_once '../db_connect.php';
 
 $user_id = $_SESSION["user_id"];
 //Form table SQL Injection
-$stmt_form= mysqli_prepare($conn, "SELECT user_id,user_name,first_name,last_name,email,phone, sell_or_buy, game_name,quantity,price, game_condition,feedback,terms_of_Service,use_of_Data FROM form where user_id = ?");
+$stmt_form= mysqli_prepare($conn, "SELECT user_id, sell_or_buy, game_name,quantity,price, game_condition,feedback,terms_of_Service,use_of_Data FROM form where user_id = ?");
 mysqli_stmt_bind_param($stmt_form,"i",$user_id);
 mysqli_stmt_execute($stmt_form);
 $result_form = mysqli_stmt_get_result($stmt_form);
@@ -67,11 +67,6 @@ $row_counter = mysqli_num_rows($result_form);
 if($row_counter > 0){
 echo "<tr>";
 echo "<th>user_id</th>";
-echo "<th>user_name</th>";
-echo "<th>first_name</th>";
-echo "<th>last_name</th>";
-echo "<th>email</th>";
-echo "<th>phone</th>";
 echo "<th>sell_or_buy</th>";
 echo "<th>game_name</th>";
 echo "<th>quantity</th>";
@@ -92,11 +87,7 @@ if($first_row){
 }
 
 //echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["user_name"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["first_name"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["last_name"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
+
 echo "<td>" . htmlspecialchars($row["sell_or_buy"]) . "</td>";
 echo "<td>" . htmlspecialchars($row["game_name"] ). "</td>";
 echo "<td>" . htmlspecialchars($row["quantity"] ). "</td>";
@@ -113,7 +104,7 @@ echo "</tr>";
 
 
 }
-echo "<tr><td colspan=\"14\"> This is all The Forms</td> </tr>";
+echo "<tr><td colspan=\"9\"> This is all The Forms</td> </tr>";
 
     
 }

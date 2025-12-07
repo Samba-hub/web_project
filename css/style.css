@@ -679,11 +679,12 @@ width:500px
 .Table {
     width: 100%;
     border: 10px solid black;
-    overflow-wrap:anywhere;
+    overflow-wrap:normal;
+    
 }
 
 .Table th, .Table td {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     background-color: darkblue;
     color: white;

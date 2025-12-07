@@ -22,11 +22,6 @@ if(isset($_POST['submit_form'])){
    // if (!empty($_SESSION["user_id"])) {
       $user_id = $_SESSION["user_id"];
 
-     $username = $_POST['username'];
-     $fname    = $_POST['fname'];
-     $lname    = $_POST['lname'];
-     $email    = $_POST['email'];
-     $phone    = $_POST['phone'];
     
 
     $status   = $_POST['status'];
@@ -41,44 +36,7 @@ if(isset($_POST['submit_form'])){
       //php vaildaition
       $errors = [];
       //username
-      if(empty($username)){
-        $errors [] = "Username must be filled";
-      }
-      if (strlen($username) < 3 || strlen($username) > 100){
-         $errors [] = "Invalid username must at least be 3 charecters";
-      }
-
-      //Firstname
-      if(empty($fname)){
-        $errors [] = "First name must be filled";
-      }
-      if (strlen($fname) < 3 || strlen($fname) > 100){
-         $errors [] = "Invalid First name at least be 3 charecters";
-      }
-
-      //Lastname
-      if(empty($lname)){
-        $errors [] = "Last name must be filled";
-      }
-      if (strlen($lname) < 5 || strlen($lname) > 100){
-         $errors [] = "Invalid Last name at least be 5 charecters";
-      }
-
-      //Email
-      if(empty($email)){
-        $errors [] = "Email must be filled";
-      }
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-         $errors [] = "Invalid Email";
-      }
-
-      //Phone
-      if(empty($phone)){
-         $errors [] = "Phone Number must be filled";
-      }
-      if (!ctype_digit($phone) || strlen($phone) != 10) {
-         $errors[] = "Invalid phone number, Phone Number must be 10 digits";
-      }
+     
       
       //Status
       if (empty($status)){
@@ -164,8 +122,8 @@ if(isset($_POST['submit_form'])){
 
    
     //SQL Injection 
-    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id,user_name,first_name,last_name,email,phone, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($stmt,"isssssssidssii",$user_id,$username,$fname,$lname,$email,$phone,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
+    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?)");
+    mysqli_stmt_bind_param($stmt,"issidssii",$user_id,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
     $success = mysqli_stmt_execute($stmt);
     if ($success) {
     echo "<script>alert('form submitted successfully');</script>";
@@ -205,26 +163,8 @@ include "../includes/logging.php";
   <!-- Form for selling or buying games -->
   <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
     
-    <!-- Personal Info Section -->
-    <fieldset>
-      <legend>Personal Info</legend>
-      
-      <label for="username">User name:<span>*</span></label>
-      <input type="text" id="username" name="username" placeholder="Ultimate Life Form" >
-
-      <label for="fname">First name:<span>*</span></label>
-      <input type="text" id="fname" name="fname" placeholder="Ultimate Life Form" >
-
-      <label for="lname">Last name: <span>*</span></label>
-      <input type="text" id="lname" name="lname" placeholder="Alsafry" >
-
-      <label for="email">Email: <span>*</span></label>
-      <input type="text" id="email" name="email" placeholder="example@gmail.com" >
-
-      <label for="phone">Phone#:<span>*</span></label>
-      <input type="text" id="phone" name="phone" placeholder="(123)-456-7890" >
-
-    </fieldset>
+   
+    
 
 
     <fieldset>
