@@ -36,7 +36,44 @@ if(isset($_POST['submit_form'])){
       //php vaildaition
       $errors = [];
       //username
-     
+      if(empty($username)){
+        $errors [] = "Username must be filled";
+      }
+      if (strlen($username) < 3 || strlen($username) > 20){
+         $errors [] = "Invalid username must at least be 3 charecters";
+      }
+
+      //Firstname
+      if(empty($fname)){
+        $errors [] = "First name must be filled";
+      }
+      if (strlen($fname) < 3 || strlen($fname) > 20){
+         $errors [] = "Invalid First name at least be 3 charecters";
+      }
+
+      //Lastname
+      if(empty($lname)){
+        $errors [] = "Last name must be filled";
+      }
+      if (strlen($lname) < 5 || strlen($lname) > 20){
+         $errors [] = "Invalid Last name at least be 5 charecters";
+      }
+
+      //Email
+      if(empty($email)){
+        $errors [] = "Email must be filled";
+      }
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+         $errors [] = "Invalid Email";
+      }
+
+      //Phone
+      if(empty($phone)){
+         $errors [] = "Phone Number must be filled";
+      }
+      if (!ctype_digit($phone) || strlen($phone) != 10) {
+         $errors[] = "Invalid phone number, Phone Number must be 10 digits";
+      }
       
       //Status
       if (empty($status)){
@@ -47,7 +84,7 @@ if(isset($_POST['submit_form'])){
       if(empty($gname)){
         $errors [] = "Game Name must be filled";
       }
-      if (strlen($gname) < 4 || strlen($gname) > 100){
+      if (strlen($gname) < 4 || strlen($gname) > 30){
          $errors [] = "Game Name must be at least 4 charecters";
       }
 
@@ -106,15 +143,20 @@ if(isset($_POST['submit_form'])){
 
        //XSS Protection
        
-    
+    $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
+    $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
+    $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
+    $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
+    $phone = htmlspecialchars($phone, ENT_QUOTES,'UTF-8');
     $status = htmlspecialchars($status, ENT_QUOTES,'UTF-8');
     $gname = htmlspecialchars($gname, ENT_QUOTES,'UTF-8');
     $quantity = htmlspecialchars($quantity, ENT_QUOTES,'UTF-8');
     $price = htmlspecialchars($price, ENT_QUOTES,'UTF-8');
     $condition = htmlspecialchars($condition, ENT_QUOTES,'UTF-8');
     $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');
-   $A_term = isset($_POST['agree-to-term']) ? 1 : 0; //convert from boolean to intgar
-   $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
+    
+    $A_term = isset($_POST['agree-to-term']) ? 1 : 0; //convert from boolean to intgar
+    $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
 
    
     //SQL Injection 

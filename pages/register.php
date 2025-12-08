@@ -14,7 +14,7 @@ if (isset($_POST["submit_button"])) {
       if(empty($username)){
         $errors [] = "Username must be filled";
       }
-      if (strlen($username) < 3 || strlen($username) > 100){
+      if (strlen($username) < 3 || strlen($username) > 20){
          $errors [] = "Invalid username must at least be 3 charecters";
       }
 
