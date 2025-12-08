@@ -14,7 +14,7 @@ if (isset($_POST["submit_button"])) {
       if(empty($username)){
         $errors [] = "Username must be filled";
       }
-      if (strlen($username) < 3 || strlen($username) > 100){
+      if (strlen($username) < 3 || strlen($username) > 20){
          $errors [] = "Invalid username must at least be 3 charecters";
       }
 
@@ -75,7 +75,7 @@ if (isset($_POST["submit_button"])) {
      */   
 
         //XSS Protection
-    // $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
+     $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
 
        //SQL Injection
       //After Hashing
