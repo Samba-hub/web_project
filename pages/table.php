@@ -88,14 +88,14 @@ if($first_row){
 
 //echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
 
-echo "<td>" . htmlspecialchars($row["sell_or_buy"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["game_name"] ). "</td>";
-echo "<td>" . htmlspecialchars($row["quantity"] ). "</td>";
-echo "<td>" . htmlspecialchars($row["price"] ). "</td>";
-echo "<td>" . htmlspecialchars($row["game_condition"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["feedback"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["terms_of_Service"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["use_of_Data"]) . "</td>";
+echo "<td>" .$row["sell_or_buy"] . "</td>";
+echo "<td>" .$row["game_name"] . "</td>";
+echo "<td>" . $row["quantity"] . "</td>";
+echo "<td>" .$row["price"] . "</td>";
+echo "<td>" . $row["game_condition"] . "</td>";
+echo "<td>" . $row["feedback"] . "</td>";
+echo "<td>" . $row["terms_of_Service"] . "</td>";
+echo "<td>" .$row["use_of_Data"] . "</td>";
 
 
 

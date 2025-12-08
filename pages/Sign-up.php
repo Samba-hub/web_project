@@ -104,12 +104,12 @@ if (isset($_POST['submit_button'])) {
 
     
     //XSS Protection
-    /*
+    
     $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
     $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
     $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
     $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-    */
+    
     //SQL Injection
     $stmt = mysqli_prepare($conn, "INSERT INTO login (email, first_name, last_name, user_name, user_password) VALUES (?,?,?,?,?)");
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

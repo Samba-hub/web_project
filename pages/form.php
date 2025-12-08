@@ -105,18 +105,14 @@ if(isset($_POST['submit_form'])){
       }
 
        //XSS Protection
-       /*moved to table page
-    $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
-    $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
-    $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
-    $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-    $phone = htmlspecialchars($phone, ENT_QUOTES,'UTF-8');
+       
+    
     $status = htmlspecialchars($status, ENT_QUOTES,'UTF-8');
     $gname = htmlspecialchars($gname, ENT_QUOTES,'UTF-8');
     $quantity = htmlspecialchars($quantity, ENT_QUOTES,'UTF-8');
     $price = htmlspecialchars($price, ENT_QUOTES,'UTF-8');
     $condition = htmlspecialchars($condition, ENT_QUOTES,'UTF-8');
-    $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');*/
+    $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');
    $A_term = isset($_POST['agree-to-term']) ? 1 : 0; //convert from boolean to intgar
    $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
 

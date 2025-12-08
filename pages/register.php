@@ -75,7 +75,7 @@ if (isset($_POST["submit_button"])) {
      */   
 
         //XSS Protection
-    // $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
+     $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
 
        //SQL Injection
       //After Hashing

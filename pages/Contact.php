@@ -47,7 +47,7 @@ if (isset($_POST['submit_btn'])) {
         echo "<script>window.alert('please login or register an account');</script>";
     }*/
         //XSS Protection
-        //$complaint = htmlspecialchars($complaint, ENT_QUOTES,'UTF-8');
+        $complaint = htmlspecialchars($complaint, ENT_QUOTES,'UTF-8');
         //SQL Injection
         $stmt = mysqli_prepare($conn,"INSERT INTO complaints (complaint_text, user_id) VALUES (?,?)");
         mysqli_stmt_bind_param($stmt,"si",$complaint,$user_id);
