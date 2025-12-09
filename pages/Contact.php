@@ -29,23 +29,8 @@ if (isset($_POST['submit_btn'])) {
         foreach ($errors as $e){
           echo "<script>alert('$e');</script>";
         }
-        return;
       }
-      /*
-        $sql = "INSERT INTO complaints
-            (complaint_text,user_id)
-            VALUES
-            ('$complaint','$user_id')";
-
-        if (mysqli_query($conn, $sql)) {
-            echo "<script>window.alert('Complaint uploaded successfully');</script>";
-        } else {
-            echo "<script>window.alert('something went wrong');</script>";
-        }
-
-    } else {
-        echo "<script>window.alert('please login or register an account');</script>";
-    }*/
+      
         //XSS Protection
         $complaint = htmlspecialchars($complaint, ENT_QUOTES,'UTF-8');
         //SQL Injection
@@ -53,15 +38,13 @@ if (isset($_POST['submit_btn'])) {
         mysqli_stmt_bind_param($stmt,"si",$complaint,$user_id);
         $success =mysqli_stmt_execute($stmt);
         if ($success) {
-            echo "<script>alert('Complaint uploaded successfully');</script>";
+             $message = "<div style='color:blue; padding:10px; border:1px solid blue;'>Complaint uploaded successfully</div>";
+           
         } else {
             echo "<script>alert('Something went wrong');</script>";
         }
 
-    }// else {
-        //echo "<script>alert('Please login or register an account');</script>";
-//}
-//}
+    }
 
 include "../includes/logging.php";
 
@@ -96,7 +79,7 @@ include "../includes/logging.php";
 
     <!-- Contact Section -->
     <h1>We value your feedback please Write your here Complane or Use the link to send me an Email</h1>
-    
+    <?php echo $message; ?>
     <br>
 
     <div class="box2">

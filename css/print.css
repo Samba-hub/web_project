@@ -4,7 +4,7 @@ body *{
     visibility: hidden ;
 }
 /*hide the navigation bar and footer and h1 and button to make the page clearer*/
-.navbar, .footer, h1, button {
+.navbar, .footer, h1, button{
     display: none;
  }
 /*making the table visible so it can apper in the printing page*/ 
@@ -12,6 +12,7 @@ table, table * {
    visibility: visible !important;
 }
 
+    
 table {
     width: 100%;
     border-collapse: collapse;

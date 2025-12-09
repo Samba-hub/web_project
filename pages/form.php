@@ -7,6 +7,7 @@
 
 <?php
 require_once '../db_connect.php';
+$message = "";
 session_start();
 
 //Secure Design
@@ -23,7 +24,8 @@ if(isset($_POST['submit_form'])){
       $user_id = $_SESSION["user_id"];
 
     
-
+    $username = $_POST['username'];
+    $email    = $_POST['email'];
     $status   = $_POST['status'];
     $gname    = $_POST['gname'];
     $quantity = $_POST['quantity'];
@@ -43,22 +45,7 @@ if(isset($_POST['submit_form'])){
          $errors [] = "Invalid username must at least be 3 charecters";
       }
 
-      //Firstname
-      if(empty($fname)){
-        $errors [] = "First name must be filled";
-      }
-      if (strlen($fname) < 3 || strlen($fname) > 20){
-         $errors [] = "Invalid First name at least be 3 charecters";
-      }
-
-      //Lastname
-      if(empty($lname)){
-        $errors [] = "Last name must be filled";
-      }
-      if (strlen($lname) < 5 || strlen($lname) > 20){
-         $errors [] = "Invalid Last name at least be 5 charecters";
-      }
-
+     
       //Email
       if(empty($email)){
         $errors [] = "Email must be filled";
@@ -67,13 +54,7 @@ if(isset($_POST['submit_form'])){
          $errors [] = "Invalid Email";
       }
 
-      //Phone
-      if(empty($phone)){
-         $errors [] = "Phone Number must be filled";
-      }
-      if (!ctype_digit($phone) || strlen($phone) != 10) {
-         $errors[] = "Invalid phone number, Phone Number must be 10 digits";
-      }
+     
       
       //Status
       if (empty($status)){
@@ -138,16 +119,14 @@ if(isset($_POST['submit_form'])){
         foreach ($errors as $e){
           echo "<script>alert('$e');</script>";
         }
-        return;
       }
 
        //XSS Protection
        
     $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
-    $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
-    $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
+    
     $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-    $phone = htmlspecialchars($phone, ENT_QUOTES,'UTF-8');
+  
     $status = htmlspecialchars($status, ENT_QUOTES,'UTF-8');
     $gname = htmlspecialchars($gname, ENT_QUOTES,'UTF-8');
     $quantity = htmlspecialchars($quantity, ENT_QUOTES,'UTF-8');
@@ -159,12 +138,12 @@ if(isset($_POST['submit_form'])){
     $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
 
    
-    //SQL Injection 
-    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($stmt,"issidssii",$user_id,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
+    //SQL Injection
+    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id,user_name,email, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+    mysqli_stmt_bind_param($stmt,"issssidssii",$user_id,$username,$email,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
     $success = mysqli_stmt_execute($stmt);
     if ($success) {
-    echo "<script>alert('form submitted successfully');</script>";
+    $message = "<div style='color:blue; padding:10px; border:1px solid blue;'>Form submitted successfully!</div>";
     } else {
     echo "<script>alert('Something went wrong. please try again later');</script>";
     }
@@ -197,10 +176,21 @@ include "../includes/logging.php";
 
   <!-- Page heading -->
   <h1>Please fill this form</h1>
-
+  <?php echo $message; ?>
   <!-- Form for selling or buying games -->
   <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
-    
+    <!-- Personal Info Section -->
+    <fieldset>
+      <legend>Personal Info</legend>
+
+      <label for="username">User name:<span>*</span></label>
+      <input type="text" id="username" name="username" placeholder="Ultimate Life Form" >
+
+
+      <label for="email">Email: <span>*</span></label>
+      <input type="text" id="email" name="email" placeholder="example@gmail.com" >
+
+    </fieldset>
    
     
 
