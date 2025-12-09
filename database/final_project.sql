@@ -52,6 +52,8 @@ CREATE TABLE `complaints` (
 CREATE TABLE `form` (
   `form_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
+  `user_name` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `sell_or_buy` varchar(4) DEFAULT NULL,
   `game_name` varchar(30) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,

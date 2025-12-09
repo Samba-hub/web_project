@@ -4,22 +4,13 @@ function validateForm(){
     if(!validateUserName())
         return false;
 
-    //FirstName validation
-    if(!validateFirstName())
-        return false;
-
-    //LastName validation
-    if(!validateLastName())
-        return false;
+    
 
     //Email validation
     if(!validateEmail())
         return false;
 
-    //Phone validation
-    if(!validatePhone())
-        return false;
-
+   
     //Status valiadtion
     if(!validateStatus())
         return false;
@@ -152,42 +143,8 @@ function validateUserName(){
 }
 
 
-function validateLastName(){
-
-    
-     if(document.getElementById("lname").value == ""){
-        alert("Last name must be filled out");
-        return false;
-    }
-
-    var lname = document.getElementById("lname").value;
-
-    if (lname.length < 5 || lname.length > 20){
-        alert("Enter a your Last Name that is 5 charecter and more");
-        return false;
-    }
-
-    return true;
-}
 
 
-function validateFirstName(){
-
-    
-     if(document.getElementById("fname").value == ""){
-        alert("First name must be filled out");
-        return false;
-    }
-
-    var fname = document.getElementById("fname").value;
-
-    if (fname.length < 3|| fname.length > 20){
-        alert("Enter a Name that is 3 charecter and more");
-        return false;
-    }
-
-    return true;
-}
 
 function validateFeedback(){
 

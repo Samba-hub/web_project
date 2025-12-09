@@ -11,7 +11,7 @@ require_once '../db_connect.php';
 
 $user_id = $_SESSION["user_id"];
 //Form table SQL Injection
-$stmt_form= mysqli_prepare($conn, "SELECT user_id, sell_or_buy, game_name,quantity,price, game_condition,feedback,terms_of_Service,use_of_Data FROM form where user_id = ?");
+$stmt_form= mysqli_prepare($conn, "SELECT user_id,user_name,email, sell_or_buy, game_name,quantity,price, game_condition,feedback,terms_of_Service,use_of_Data FROM form where user_id = ?");
 mysqli_stmt_bind_param($stmt_form,"i",$user_id);
 mysqli_stmt_execute($stmt_form);
 $result_form = mysqli_stmt_get_result($stmt_form);
@@ -52,7 +52,7 @@ include "../includes/logging.php";
         <?php include '../includes/navbar.php'; ?>
         <?php include '../includes/log_btn.php'; ?>
         <h1>Table Page</h1>
-       
+
         <table class="Table">
     <caption>Your forms</caption>
 
@@ -66,12 +66,14 @@ if($result_form){
 $row_counter = mysqli_num_rows($result_form);   
 if($row_counter > 0){
 echo "<tr>";
-echo "<th>user_id</th>";
-echo "<th>sell_or_buy</th>";
-echo "<th>game_name</th>";
+echo "<th>user id</th>";
+echo "<th>user name</th>";
+echo "<th>email</th>";
+echo "<th>sell or buy</th>";
+echo "<th>game name</th>";
 echo "<th>quantity</th>";
 echo "<th>price</th>";
-echo "<th>game_condition</th>";
+echo "<th>game condition</th>";
 echo "<th>feedback</th>";
 echo "<th>Term Of Service</th>";
 echo "<th>Use of Data</th>";
@@ -88,10 +90,9 @@ if($first_row){
 
 
 echo "<td>" . $row["user_name"] . "</td>";
-echo "<td>" . $row["first_name"] . "</td>";
-echo "<td>" . $row["last_name"] . "</td>";
+
 echo "<td>" . $row["email"] . "</td>";
-echo "<td>" . $row["phone"] . "</td>";
+
 echo "<td>" . $row["sell_or_buy"] . "</td>";
 echo "<td>" . $row["game_name"] . "</td>";
 echo "<td>" . $row["quantity"] . "</td>";
@@ -108,7 +109,7 @@ echo "</tr>";
 
 
 }
-echo "<tr><td colspan=\"9\"> This is all The Forms</td> </tr>";
+echo "<tr><td colspan=\"11\"> This is all The Forms</td> </tr>";
 
     
 }
