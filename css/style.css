@@ -4,7 +4,7 @@
   Section: CS1
   Date: 2025-10-04
   File: style.css
-  Description: Main styling for Raed Retro Store website
+  Description: Main styling for Retro Store website
 */
 /* Selects all elements */
 * {
@@ -703,6 +703,7 @@ width:500px
     justify-content: flex-end;
     padding: 20px;
 }
+
 @media (max-width: 768px) {
     .Table th, .Table td {
         font-size: 12px;

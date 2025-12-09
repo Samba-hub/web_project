@@ -1,6 +1,6 @@
 <nav class="navbar">
    
-        <div class="logo"><a href="/final_project/index.php">Ultimate Life Form RetroStore</a></div>
+        <div class="logo"><a href="/final_project/index.php">RetroStore</a></div>
         
             <a href="/final_project/index.php">Home</a>
             <a href="/final_project/pages/Services.php">Services</a>
