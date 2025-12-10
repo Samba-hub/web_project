@@ -15,7 +15,7 @@ include "includes/logging.php" ;?>
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="retro">
+    <meta name="author" content="Retro Store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Store</title>
     <link rel="stylesheet" href="css/style.css">
@@ -25,20 +25,20 @@ include "includes/logging.php" ;?>
 <body>
     <!-- Navigation Bar -->
     <?php include 'includes/navbar.php'; ?>
-    <?php include 'includes/log_btn.php'; ?>
+    
     
     <!-- Page Heading -->
-    <h1>retro Retro Store</h1>
+    <h1>Retro Store</h1>
 
     <!-- Introduction Section -->
     <div>
 
-        <p>Welcome to <cite>retro Retro Store</cite>, your destination for nostalgic gaming experiences from the golden
+        <p>Welcome to <cite>Retro Store</cite>, your destination for nostalgic gaming experiences from the golden
             days of consoles.
             We specialize in providing authentic games from PlayStation, Nintendo, and Sega systems.</p>
 
 
-        <p>Travel back in time to the old days of gaming! <cite>retro Retro Store</cite> offers nostalgia to your screen
+        <p>Travel back in time to the old days of gaming! <cite>Retro Store</cite> offers nostalgia to your screen
             through pixelated adventures and vintage systems.
             <br>
             <br>
@@ -66,11 +66,12 @@ include "includes/logging.php" ;?>
         
         <!-- Image -->
         <a href="pages/Items.php" target="_self" title="Click here to go to the Products/Itmes page">
-            <img src="images/GameStore_Logo.jpg" alt="game store logo">
+            <img src="./images/GameStore_Logo.jpg" alt="GameStore">
         </a>
    </div>
 
    <?php include './includes/footer.php' ;?>
+
 </body>
 
 </html>

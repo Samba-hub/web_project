@@ -4,7 +4,7 @@
   Section: CS1
   Date: 2025-10-04
   File: style.css
-  Description: Main styling for Raed Retro Store website
+  Description: Main styling for Retro Store website
 */
 /* Selects all elements */
 * {
@@ -675,19 +675,20 @@ width:500px
         text-align: center;
     }
 
-
 .Table {
     width: 100%;
     border: 10px solid black;
-    overflow-wrap:anywhere;
+    overflow-wrap: anywhere;
+
 }
 
 .Table th, .Table td {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     background-color: darkblue;
     color: white;
-    border: 4px solid black;
+    border: 4px solid black; 
+    font-size: small; 
 }
 
 .Table caption {
@@ -702,6 +703,7 @@ width:500px
     justify-content: flex-end;
     padding: 20px;
 }
+
 @media (max-width: 768px) {
     .Table th, .Table td {
         font-size: 12px;
@@ -709,7 +711,7 @@ width:500px
     }
 
     .Table {
-        min-width: 300px;  
+        min-width: 400px;  
     }
 }
 
@@ -769,4 +771,33 @@ width:500px
         flex-basis: 100%;
         height: auto;
     }
+    .Table {
+        border: none;
+        width: 100%;
+    }
+
+    .Table tr {
+        display: block;
+        background: darkblue;
+        border: 3px solid black;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .Table td {
+        display: block;
+        padding: 8px 0;
+        border: none;
+        text-align: center;
+        color: white;
+    }
+    .Table th {
+        display: block;
+        font-size: 14px;
+        padding: 3px;
+        border: none;
+        white-space: nowrap;  
+    }
+
 }

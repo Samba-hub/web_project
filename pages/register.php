@@ -14,8 +14,8 @@ if (isset($_POST["submit_button"])) {
       if(empty($username)){
         $errors [] = "Username must be filled";
       }
-      if (strlen($username) < 3 || strlen($username) > 100){
-         $errors [] = "Invalid username must at least be 3 charecters";
+      if (strlen($username) < 3 || strlen($username) > 20){
+         $errors [] = "Invalid username must be between 3 and 20 charecters";
       }
 
     //Password
@@ -23,7 +23,7 @@ if (isset($_POST["submit_button"])) {
         $errors [] = "Password must be filled";
       }
       if (strlen($password) < 8 || strlen($password) > 25){
-         $errors [] = "Invalid password that is at least 8 charecter and less than 25";
+         $errors [] = "Invalid password must be between 8 and 25 charecters";
       }
 
       //Stop If there is an Error
@@ -31,54 +31,17 @@ if (isset($_POST["submit_button"])) {
         foreach ($errors as $e){
           echo "<script>alert('$e');</script>";
         }
-        return;
+
       }
 
-/*
-    $sql = "SELECT * FROM login WHERE user_name = '$username' and user_password = '$password' ";
-    $result = mysqli_query($conn, $sql);
+ 
 
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_array($result);
-        //Store the user_id of the user into this global variable called $_session.
-        $_SESSION["user_id"] = $row["user_id"];
+     //XSS Protection
+     $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
 
 
-        echo "<script>window.alert('Logged in successfully');</script>";
-    } else {
-        echo "<script>window.alert('The username or the password is wrong!');</script>";
-
-
-    }
-
-*/
-    //Before Hashing
-  /*
-    $stmt = mysqli_prepare($conn, "SELECT user_id FROM login WHERE user_name = ? AND user_password = ?");
-    mysqli_stmt_bind_param($stmt, "ss",$username,$password);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-
-        if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_array($result);
-        //Store the user_id of the user into this global variable called $_session.
-        $_SESSION["user_id"] = $row["user_id"];
-
-
-        echo "<script>window.alert('Logged in successfully');</script>";
-    } else {
-        echo "<script>window.alert('The username or the password is wrong!');</script>";
-
-
-    }
-     */   
-
-        //XSS Protection
-    // $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
-
-       //SQL Injection
-      //After Hashing
+    //After Hashing
+    //SQL Injection
     $stmt = mysqli_prepare($conn, "SELECT user_id, user_password FROM login WHERE user_name = ?");
     mysqli_stmt_bind_param($stmt, "s",$username);
     mysqli_stmt_execute($stmt);
@@ -89,7 +52,7 @@ if (isset($_POST["submit_button"])) {
         $row = mysqli_fetch_array($result);
 
 
-        // Verify the password
+        //Verify the password
         $hashedPassword = $row['user_password'];
         if (password_verify($password, $hashedPassword)) {
 
@@ -99,11 +62,13 @@ if (isset($_POST["submit_button"])) {
             return;
 
         } else {
-            echo "<script>alert('password is wrong');</script>";
+
+            $message = "<div style='color:red; padding:10px; border:1px solid red;'>password is wrong</div>";
+
         }
 
     } else {
-        echo "<script>alert('The username or password is wrong');</script>";
+            $message = "<div style='color:red; padding:10px; border:1px solid red;'>The username or password is wrong</div>";
     }
 }
 
@@ -123,7 +88,7 @@ include "../includes/logging.php";
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="retro">
+    <meta name="author" content="Retro Store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -137,7 +102,7 @@ include "../includes/logging.php";
     <?php include '../includes/log_btn.php'; ?>
 
     <h1>Register Page</h1>
-
+    <?php echo $message; ?>
     <div class="form_div">
         <form method="POST" name="registerform" id="registerform" onsubmit="return validateAccount()">
 

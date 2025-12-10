@@ -14,24 +14,24 @@ if (isset($_POST['submit_button'])) {
       if(empty($username)){
         $errors [] = "Username must be filled";
       }
-      if (strlen($username) < 3 || strlen($username) > 100){
-         $errors [] = "Invalid username must at least be 3 charecters";
+      if (strlen($username) < 3 || strlen($username) > 20){
+         $errors [] = "Invalid username must be between 3 and 20 charecters";
       }
 
       //Firstname
       if(empty($fname)){
         $errors [] = "First name must be filled";
       }
-      if (strlen($fname) < 3 || strlen($fname) > 100){
-         $errors [] = "Invalid First name at least be 3 charecters";
+      if (strlen($fname) < 3 || strlen($fname) > 20){
+         $errors [] = "Invalid First name must be between 3 and 20 charecters";
       }
 
       //Lastname
       if(empty($lname)){
         $errors [] = "Last name must be filled";
       }
-      if (strlen($lname) < 5 || strlen($lname) > 100){
-         $errors [] = "Invalid Last name at least be 5 charecters";
+      if (strlen($lname) < 5 || strlen($lname) > 20){
+         $errors [] = "Invalid Last name must be between 3 and 20 charecters";
       }
 
       //Email
@@ -47,7 +47,7 @@ if (isset($_POST['submit_button'])) {
         $errors [] = "Password must be filled";
       }
       if (strlen($password) < 8 || strlen($password) > 25){
-         $errors [] = "Invalid password that is at least 8 charecter and less than 25";
+         $errors [] = "Invalid password must be between 8 and 25 charecters";
       }
 
       //Stop If there is an Error
@@ -55,83 +55,56 @@ if (isset($_POST['submit_button'])) {
         foreach ($errors as $e){
           echo "<script>alert('$e');</script>";
         }
-        return;
+     
       }
-/*
-    $sql = "INSERT INTO login
-            (email, first_name, last_name, user_name, user_password) 
-            VALUES 
-            ('$email', '$fname', '$lname', '$username', '$password')";
 
-
-
-    try {
-        $value = mysqli_query($conn, $sql);
-
-        if ($value == true) {
-            $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
-
-        }
-
-
-    } catch (Exception $e) {
-
-        $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
-    }
-    */
-    //Check if the username already exists
+    else{
+   //Check if the username already exists
     $checkU_stmt = mysqli_prepare($conn, "SELECT user_name FROM login WHERE user_name = ?");
     mysqli_stmt_bind_param($checkU_stmt,"s",$username);
     mysqli_stmt_execute($checkU_stmt);
     $checkU_result = mysqli_stmt_get_result($checkU_stmt);
     if(mysqli_num_rows($checkU_result) > 0){
-         echo "<script>alert('This user name already exists'); 
-         window.location.href='Sign-up.php';</script>";//Redircte to the sign-up page so it does not cause a fetal error
-        return;
+    $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> User Name Already exists</div>";
     }
 
-    
-    //Check if the email already exists
+    else {
+     //Check if the email already exists
     $check_stmt = mysqli_prepare($conn, "SELECT email FROM login WHERE email = ?");
     mysqli_stmt_bind_param($check_stmt,"s",$email);
     mysqli_stmt_execute($check_stmt);
     $check_result = mysqli_stmt_get_result($check_stmt);
     if(mysqli_num_rows($check_result) > 0){
-         echo "<script>alert('This email already exists'); 
-         window.location.href='Sign-up.php';</script>";//Redircte to the sign-up page so it does not cause a fetal error
-        return;
-    }
-
-    
-    //XSS Protection
-    /*
-    $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
-    $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
-    $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
-    $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-    */
-    //SQL Injection
-    $stmt = mysqli_prepare($conn, "INSERT INTO login (email, first_name, last_name, user_name, user_password) VALUES (?,?,?,?,?)");
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "sssss",$email,$fname,$lname,$username,$hashedPassword);
-    $success = mysqli_stmt_execute($stmt);
-    
-    if($success){
-         $message = "<div style='color: green; padding: 10px; border: 1px solid green; margin-bottom: 20px;'> Form submitted successfully!</div>";
-          echo "<script>window.location.href='/pages/register.php';</script>";
-    }
-    else{
-         $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Error: " . mysqli_error($conn) . "</div>";
+    $message = "<div style='color: red; padding: 10px; border: 1px solid red; margin-bottom: 20px;'> Email Already exists</div>";
 
     }
+    else {
+        //XSS Protection
+        $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
+        $fname    = htmlspecialchars($fname, ENT_QUOTES, 'UTF-8');
+        $lname    = htmlspecialchars($lname, ENT_QUOTES, 'UTF-8');
+        $email    = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
 
+        //SQL Injection
+        $stmt = mysqli_prepare($conn, "INSERT INTO login (email, first_name, last_name, user_name, user_password) VALUES (?,?,?,?,?)");
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt, "sssss", $email, $fname, $lname, $username, $hashedPassword);
+        $success = mysqli_stmt_execute($stmt);
+
+        if ($success) {
+            echo "<script>alert('Sign-Up successfully!');</script>";
+            echo "<script>window.location.href='/final_project/pages/register.php';</script>";
+        } else {
+            $message = "<div style='color:red; padding:10px; border:1px solid red;'>Error: " . mysqli_error($conn) . "</div>";
+        }
+    }
+}
+    }
 }
 
 include "../includes/logging.php";
 
-
 ?>
-
 
 
 
@@ -140,7 +113,7 @@ include "../includes/logging.php";
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="retro">
+    <meta name="author" content="Retro Store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -185,7 +158,6 @@ include "../includes/logging.php";
                 </label>
                 <input type="submit" id="submit_button" name="submit_button" value="Sign Up">
 
-
             </div>
 
         </form>
@@ -196,3 +168,4 @@ include "../includes/logging.php";
 </body>
 
 </html>
+

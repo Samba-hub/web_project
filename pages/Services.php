@@ -13,7 +13,7 @@ include "../includes/logging.php" ;?>
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="retro">
+    <meta name="author" content="Retro Store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
     <link rel ="stylesheet" href="../css/style.css">
@@ -26,7 +26,7 @@ include "../includes/logging.php" ;?>
     <!-- Page Heading -->
     <h1>Our Services</h1>
     <!-- Introduction Paragraph -->
-    <p><strong>At retro Retro Store</strong>, we bring the past into the present. Below is the list of what we offer to all retro lovers!</p>
+    <p><strong>At Retro Store</strong>, we bring the past into the present. Below is the list of what we offer to all retro lovers!</p>
 
     <!-- Services List Section -->
     <div class="box2">

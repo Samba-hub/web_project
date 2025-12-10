@@ -7,6 +7,7 @@
 
 <?php
 require_once '../db_connect.php';
+$message = "";
 session_start();
 
 //Secure Design
@@ -22,13 +23,9 @@ if(isset($_POST['submit_form'])){
    // if (!empty($_SESSION["user_id"])) {
       $user_id = $_SESSION["user_id"];
 
-     $username = $_POST['username'];
-     $fname    = $_POST['fname'];
-     $lname    = $_POST['lname'];
-     $email    = $_POST['email'];
-     $phone    = $_POST['phone'];
     
-
+    $username = $_POST['username'];
+    $email    = $_POST['email'];
     $status   = $_POST['status'];
     $gname    = $_POST['gname'];
     $quantity = $_POST['quantity'];
@@ -44,26 +41,11 @@ if(isset($_POST['submit_form'])){
       if(empty($username)){
         $errors [] = "Username must be filled";
       }
-      if (strlen($username) < 3 || strlen($username) > 100){
+      if (strlen($username) < 3 || strlen($username) > 20){
          $errors [] = "Invalid username must at least be 3 charecters";
       }
 
-      //Firstname
-      if(empty($fname)){
-        $errors [] = "First name must be filled";
-      }
-      if (strlen($fname) < 3 || strlen($fname) > 100){
-         $errors [] = "Invalid First name at least be 3 charecters";
-      }
-
-      //Lastname
-      if(empty($lname)){
-        $errors [] = "Last name must be filled";
-      }
-      if (strlen($lname) < 5 || strlen($lname) > 100){
-         $errors [] = "Invalid Last name at least be 5 charecters";
-      }
-
+     
       //Email
       if(empty($email)){
         $errors [] = "Email must be filled";
@@ -72,13 +54,7 @@ if(isset($_POST['submit_form'])){
          $errors [] = "Invalid Email";
       }
 
-      //Phone
-      if(empty($phone)){
-         $errors [] = "Phone Number must be filled";
-      }
-      if (!ctype_digit($phone) || strlen($phone) != 10) {
-         $errors[] = "Invalid phone number, Phone Number must be 10 digits";
-      }
+     
       
       //Status
       if (empty($status)){
@@ -89,7 +65,7 @@ if(isset($_POST['submit_form'])){
       if(empty($gname)){
         $errors [] = "Game Name must be filled";
       }
-      if (strlen($gname) < 4 || strlen($gname) > 100){
+      if (strlen($gname) < 4 || strlen($gname) > 30){
          $errors [] = "Game Name must be at least 4 charecters";
       }
 
@@ -143,32 +119,31 @@ if(isset($_POST['submit_form'])){
         foreach ($errors as $e){
           echo "<script>alert('$e');</script>";
         }
-        return;
       }
 
        //XSS Protection
-       /*moved to table page
+       
     $username = htmlspecialchars($username, ENT_QUOTES,'UTF-8');
-    $fname = htmlspecialchars($fname, ENT_QUOTES,'UTF-8');
-    $lname = htmlspecialchars($lname, ENT_QUOTES,'UTF-8');
+    
     $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-    $phone = htmlspecialchars($phone, ENT_QUOTES,'UTF-8');
+  
     $status = htmlspecialchars($status, ENT_QUOTES,'UTF-8');
     $gname = htmlspecialchars($gname, ENT_QUOTES,'UTF-8');
     $quantity = htmlspecialchars($quantity, ENT_QUOTES,'UTF-8');
     $price = htmlspecialchars($price, ENT_QUOTES,'UTF-8');
     $condition = htmlspecialchars($condition, ENT_QUOTES,'UTF-8');
-    $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');*/
-   $A_term = isset($_POST['agree-to-term']) ? 1 : 0; //convert from boolean to intgar
-   $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
+    $feedback = htmlspecialchars($feedback, ENT_QUOTES,'UTF-8');
+    
+    $A_term = isset($_POST['agree-to-term']) ? 1 : 0; //convert from boolean to intgar
+    $A_data = isset($_POST['agree-to-use-of-data']) ? 1 : 0;//convert from boolean to intgar
 
    
-    //SQL Injection 
-    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id,user_name,first_name,last_name,email,phone, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-    mysqli_stmt_bind_param($stmt,"isssssssidssii",$user_id,$username,$fname,$lname,$email,$phone,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
+    //SQL Injection
+    $stmt = mysqli_prepare($conn, "INSERT INTO form (user_id,user_name,email, sell_or_buy, game_name,quantity, price, game_condition, feedback,terms_of_Service,use_of_Data) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+    mysqli_stmt_bind_param($stmt,"issssidssii",$user_id,$username,$email,$status,$gname,$quantity,$price,$condition,$feedback,$A_term,$A_data);
     $success = mysqli_stmt_execute($stmt);
     if ($success) {
-    echo "<script>alert('form submitted successfully');</script>";
+    $message = "<div style='color:blue; padding:10px; border:1px solid blue;'>Form submitted successfully!</div>";
     } else {
     echo "<script>alert('Something went wrong. please try again later');</script>";
     }
@@ -186,7 +161,7 @@ include "../includes/logging.php";
 <head>
   <!-- Head section includes metadata, title, and stylesheet links -->
   <meta charset="UTF-8">
-  <meta name="author" content="retro">
+  <meta name="author" content="Retro Store">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
   <link rel="stylesheet" href="../css/style.css">
@@ -201,30 +176,23 @@ include "../includes/logging.php";
 
   <!-- Page heading -->
   <h1>Please fill this form</h1>
-
+  <?php echo $message; ?>
   <!-- Form for selling or buying games -->
   <form method="POST" name="SB-Form" id="SB-Form" onsubmit="return validateForm()">
-    
     <!-- Personal Info Section -->
     <fieldset>
       <legend>Personal Info</legend>
-      
+
       <label for="username">User name:<span>*</span></label>
-      <input type="text" id="username" name="username" placeholder="retro" >
+      <input type="text" id="username" name="username" placeholder="User Name" >
 
-      <label for="fname">First name:<span>*</span></label>
-      <input type="text" id="fname" name="fname" placeholder="retro" >
-
-      <label for="lname">Last name: <span>*</span></label>
-      <input type="text" id="lname" name="lname" placeholder="Alsafry" >
 
       <label for="email">Email: <span>*</span></label>
       <input type="text" id="email" name="email" placeholder="example@gmail.com" >
 
-      <label for="phone">Phone#:<span>*</span></label>
-      <input type="text" id="phone" name="phone" placeholder="(123)-456-7890" >
-
     </fieldset>
+   
+    
 
 
     <fieldset>

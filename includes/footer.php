@@ -31,15 +31,24 @@
         
         <!-- Copyright -->
         <div class="bottom-bar">
-            <p>&copy; 2025 Ultimate Life FormRetroStore.All rights reserved.</p>
+            <p>&copy; 2025 RetroStore.All rights reserved.</p>
         </div>
 
-<!--CSS Validation-->
+<!--HTML5 Badge-->
+<!--There is no badge for html5 so we made ours after checking that there is no error in the html validator-->
+<p>
+    <a href="https://validator.w3.org/nu/" target="_blank" rel="noopener">
+        <img style="border:0;width:88px;height:31px"
+            src="https://www.w3.org/Icons/valid-xhtml10"
+            alt="Valid HTML5!" >
+    </a>
+</p>
+<!--CSS Validation for style.css-->
 <p>
     <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
             src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-            alt="Valid CSS!" />
+            alt="Valid CSS!" >
     </a>
 </p>
 

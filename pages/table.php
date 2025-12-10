@@ -11,7 +11,7 @@ require_once '../db_connect.php';
 
 $user_id = $_SESSION["user_id"];
 //Form table SQL Injection
-$stmt_form= mysqli_prepare($conn, "SELECT user_id,user_name,first_name,last_name,email,phone, sell_or_buy, game_name,quantity,price, game_condition,feedback,terms_of_Service,use_of_Data FROM form where user_id = ?");
+$stmt_form= mysqli_prepare($conn, "SELECT user_id,user_name,email, sell_or_buy, game_name,quantity,price, game_condition,feedback,terms_of_Service,use_of_Data FROM form where user_id = ?");
 mysqli_stmt_bind_param($stmt_form,"i",$user_id);
 mysqli_stmt_execute($stmt_form);
 $result_form = mysqli_stmt_get_result($stmt_form);
@@ -38,7 +38,7 @@ include "../includes/logging.php";
 
     <head>
     <meta charset="UTF-8" >
-    <meta name="author" content="retro" >
+    <meta name="author" content="Retro Store" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Table</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -52,7 +52,7 @@ include "../includes/logging.php";
         <?php include '../includes/navbar.php'; ?>
         <?php include '../includes/log_btn.php'; ?>
         <h1>Table Page</h1>
-       
+
         <table class="Table">
     <caption>Your forms</caption>
 
@@ -66,17 +66,14 @@ if($result_form){
 $row_counter = mysqli_num_rows($result_form);   
 if($row_counter > 0){
 echo "<tr>";
-echo "<th>user_id</th>";
-echo "<th>user_name</th>";
-echo "<th>first_name</th>";
-echo "<th>last_name</th>";
+echo "<th>user id</th>";
+echo "<th>user name</th>";
 echo "<th>email</th>";
-echo "<th>phone</th>";
-echo "<th>sell_or_buy</th>";
-echo "<th>game_name</th>";
+echo "<th>sell or buy</th>";
+echo "<th>game name</th>";
 echo "<th>quantity</th>";
 echo "<th>price</th>";
-echo "<th>game_condition</th>";
+echo "<th>game condition</th>";
 echo "<th>feedback</th>";
 echo "<th>Term Of Service</th>";
 echo "<th>Use of Data</th>";
@@ -87,24 +84,23 @@ while($row = mysqli_fetch_array($result_form)){
 echo "<tr>";
 
 if($first_row){
-  echo "<td rowspan=\"$row_counter\">" .  htmlspecialchars($row["user_id"]) . "</td> ";  
+  echo "<td rowspan=\"$row_counter\">" .  $row["user_id"] . "</td> ";  
   $first_row = false;
 }
 
-//echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["user_name"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["first_name"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["last_name"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["sell_or_buy"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["game_name"] ). "</td>";
-echo "<td>" . htmlspecialchars($row["quantity"] ). "</td>";
-echo "<td>" . htmlspecialchars($row["price"] ). "</td>";
-echo "<td>" . htmlspecialchars($row["game_condition"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["feedback"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["terms_of_Service"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["use_of_Data"]) . "</td>";
+
+echo "<td>" . $row["user_name"] . "</td>";
+
+echo "<td>" . $row["email"] . "</td>";
+
+echo "<td>" . $row["sell_or_buy"] . "</td>";
+echo "<td>" . $row["game_name"] . "</td>";
+echo "<td>" . $row["quantity"] . "</td>";
+echo "<td>" . $row["price"] . "</td>";
+echo "<td>" . $row["game_condition"] . "</td>";
+echo "<td>" . $row["feedback"] . "</td>";
+echo "<td>" . $row["terms_of_Service"]. "</td>";
+echo "<td>" . $row["use_of_Data"] . "</td>";
 
 
 
@@ -113,7 +109,7 @@ echo "</tr>";
 
 
 }
-echo "<tr><td colspan=\"14\"> This is all The Forms</td> </tr>";
+echo "<tr><td colspan=\"11\"> This is all The Forms</td> </tr>";
 
     
 }
@@ -159,8 +155,8 @@ echo "</tr>";
 while($row = mysqli_fetch_array($result_con)){
 echo "<tr>";
 
-echo "<td>" . htmlspecialchars($row["complaints_id"]) . "</td>";
-echo "<td>" . htmlspecialchars($row["complaint_text"]) . "</td>";
+echo "<td>" . $row["complaints_id"] . "</td>";
+echo "<td>" .$row["complaint_text"] . "</td>";
 
 
 
