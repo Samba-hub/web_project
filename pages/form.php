@@ -161,7 +161,7 @@ include "../includes/logging.php";
 <head>
   <!-- Head section includes metadata, title, and stylesheet links -->
   <meta charset="UTF-8">
-  <meta name="author" content="Ultimate Life Form">
+  <meta name="author" content="Retro Store">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form</title>
   <link rel="stylesheet" href="../css/style.css">
@@ -184,7 +184,7 @@ include "../includes/logging.php";
       <legend>Personal Info</legend>
 
       <label for="username">User name:<span>*</span></label>
-      <input type="text" id="username" name="username" placeholder="Ultimate Life Form" >
+      <input type="text" id="username" name="username" placeholder="User Name" >
 
 
       <label for="email">Email: <span>*</span></label>

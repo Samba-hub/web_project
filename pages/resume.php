@@ -7,7 +7,7 @@ include "../includes/logging.php" ;?>
   <head>
     
     <meta charset="UTF-8" >
-    <meta name="author" content="Ultimate Life Form" >
+    <meta name="author" content="Retro Store" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Resume</title>
     <link rel="stylesheet" href="../css/style.css" >

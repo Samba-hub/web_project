@@ -63,7 +63,7 @@ include "../includes/logging.php";
 <head>
     <!-- Head section includes metadata, title, and stylesheet links -->
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="Retro Store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -84,7 +84,7 @@ include "../includes/logging.php";
 
     <div class="box2">
 
-        <span>At Ultimate Life Form Retro Store, your experience is our top priority. We are committed to providing the
+        <span>At Retro Store, your experience is our top priority. We are committed to providing the
             best possible service.</span>
         <span> If you encounter any issue or believe we've fallen short, please let us know immediately.</span>
         <span>You can reach us using the provided contact information or by leaving your feedback in the text box below.
@@ -92,7 +92,7 @@ include "../includes/logging.php";
     </div>
 
     <!-- Email hyperlink -->
-    <p><a href="mailto:UltimateLifeForma8372@gmail.com" target="_self" title="email me">
+    <p><a href="mailto:RetroStore@gmail.com" target="_self" title="email me">
             Email
         </a></p>
     <!--Contact Info-->
@@ -108,7 +108,7 @@ include "../includes/logging.php";
 
     <!-- Footer Section with contact and quick links -->
     <?php include '../includes/footer.php'; ?>
-    <script type="text/javascript" src="../script/validation.js"></script>
+    <script src="../script/validation.js"></script>
 </body>
 
 </html>
