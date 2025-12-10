@@ -9,7 +9,7 @@ include "../includes/logging.php" ;?>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Ultimate Life Form">
+    <meta name="author" content="retro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photo_gallery</title>
 

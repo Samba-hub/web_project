@@ -58,7 +58,9 @@ if (isset($_POST["submit_button"])) {
 
             $_SESSION["user_id"] = $row["user_id"];
             echo "<script>alert('Logged in successfully');</script>";
-            echo "<script>window.location.href='/final_project/index.php';</script>";
+            echo "<script>window.location.href='/index.php';</script>";
+            return;
+
         } else {
 
             $message = "<div style='color:red; padding:10px; border:1px solid red;'>password is wrong</div>";
@@ -117,13 +119,13 @@ include "../includes/logging.php";
                 </label>
                 <input type="submit" id="submit_button" name="submit_button" value="Log In">
 
-                <p>Don't have an account? <a href="/final_project/pages/Sign-up.php">Sign In</a></p>
+                <p>Don't have an account? <a href="/pages/Sign-up.php">Sign In</a></p>
             </div>
 
         </form>
     </div>
     <!--javascript-->
-    <script src="/final_project/script/validation.js"></script>
+    <script src="/script/validation.js"></script>
     <?php include '../includes/footer.php'; ?>
 </body>
 

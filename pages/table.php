@@ -3,7 +3,7 @@ session_start();
 
 //Secure Design
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /final_project/pages/register.php");
+    header("Location: /pages/register.php");
     return;
 }
 

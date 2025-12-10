@@ -1,8 +1,8 @@
 <?php
-    $dbhost = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
-    $db = "web_project";
+    $dbhost = "sql100.infinityfree.com";
+    $dbusername = "if0_40508584";
+    $dbpassword = "nTruo1zbgb";
+    $db = "if0_40508584_retro_store";
 
     $conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $db);
 

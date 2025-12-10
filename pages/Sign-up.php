@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once '../db_connect.php';
 $message = "";
 if (isset($_POST['submit_button'])) {
@@ -163,7 +163,7 @@ include "../includes/logging.php";
         </form>
     </div>
     <!--javascript-->
-    <script src="/final_project/script/validation.js"></script>
+    <script src="/script/validation.js"></script>
     <?php include '../includes/footer.php'; ?>
 </body>
 

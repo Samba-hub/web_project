@@ -3,7 +3,7 @@ session_start();
 
 //Secure Design
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /final_project/pages/register.php");
+    header("Location: /pages/register.php");
     return;
 }
 
@@ -52,7 +52,7 @@ include "../includes/logging.php";
 ?>
 
 <!-- 
-  Name: Ultimate Life Form
+  Name: retro
   ID: 2002-02-22
   Date: ????-??-??
 -->
@@ -108,7 +108,7 @@ include "../includes/logging.php";
 
     <!-- Footer Section with contact and quick links -->
     <?php include '../includes/footer.php'; ?>
-    <script src="../script/validation.js"></script>
+    <script type="text/javascript" src="/script/validation.js"></script>
 </body>
 
 </html>
